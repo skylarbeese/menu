@@ -1,0 +1,118 @@
+.All-con {
+    width: 100vw;
+}
+.landing-img {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+   }
+   .grad-img {
+       background-color: black;
+       width: 90%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      opacity: .8;
+   }
+   .banner-img {
+     background-color: blue;
+     width: 90%;
+    height: 100%;
+   
+      
+   }
+   .landing-text{
+       position: absolute;
+       width: 90%;
+       height: 100%;
+       justify-content: center;
+       align-items: center;
+       display: flex;
+       flex-direction: column;
+       color: rgb(255, 255, 255);
+    }
+    .info-con{
+        margin-top: 2rem;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+    .image-box {
+        width: 100%;
+        height: 2rem;
+        background-color: thistle;
+    }
+    .info-box-con {
+      width: 80%;
+      justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+       border: 1px solid rgba(175, 175, 175);
+    }
+    .text-info {
+        width: 80%;
+    
+        display: flex;
+        flex-direction: column;
+    }
+    .text-info h1 {
+        font-size: 1.5rem;
+        padding-top: 1.3rem;
+        padding-bottom: .3rem;
+        float: left;
+    }
+    .underline {
+        margin-bottom: .8rem;
+        margin-top: .5rem;
+        width: 100%;
+      height: 2px;
+      background-color: rgb(151, 151, 151, .7);
+    }
+  
+    .info-head {
+        width: 80%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    /* ----------- search ---------------------*/
+    .form-sea{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        z-index: 3;
+    }
+    
+    .form-sea {
+        background-color: rgb(252, 252, 252);
+        border: rgb(0, 0, 0) 2px solid;
+        border-radius: 10px;
+        padding-right: .5rem;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        opacity: .8;
+    }
+    i{
+        padding-right: 1rem;
+        padding-left: 1rem;
+        color: rgb(255, 255, 255);
+    }
+    .form-sea input {
+        background-color: transparent;
+        width: 50vw;
+        margin-right: .5rem;
+        border: hidden;
+        cursor: pointer;
+        outline: none;
+        border: none;
+    }
+ 
