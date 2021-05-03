@@ -35,6 +35,9 @@
        flex-direction: column;
        color: rgb(255, 255, 255);
     }
+    .landing-text h1 {
+        z-index: 1;
+    }
     .info-con{
         margin-top: 2rem;
         width: 100%;
@@ -89,7 +92,7 @@
         justify-content: center;
         align-items: center;
         display: flex;
-        z-index: 3;
+        z-index: 1;
     }
     
     .form-sea {

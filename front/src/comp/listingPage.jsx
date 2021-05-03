@@ -1,6 +1,17 @@
 import './listing.css';
-
+import Axios from 'axios'
+import { useState } from 'react';
 function ListingPage() {
+  const [buy, setBuy] = useState('')
+  const [prop, setProp] = useState('')
+  const [des, setDes] = useState('')
+  const add = (e) => {
+    e.preventDefault()
+  Axios.post('/',  {
+    buy: buy, prop: prop, des: des
+  })
+  .then(res => setMessage(res.data))
+}
   return (
     <>
     <div className="listing-con">
@@ -13,13 +24,22 @@ function ListingPage() {
       </div>
         <div className="form">
         <form>
-          <ladel>Property</ladel>
-          <input type="text" name="" value="" className=""/>
-          <ladel>Property</ladel>
-          <input type="text" name="" value="" className=""/>
+          <ladel>Rent/Own</ladel>
+          
+          <div className="radio-btn">
+          <div className="radio"><input type="radio" name="prop-buy" value="Rent" className="" onChange={(e) => setBuy(e.target.value)} /> Renting</div>
+          <div className="radio"><input type="radio" name="prop-buy" value="Buy" className="" onChange={(e) => setBuy(e.target.value)}/> Saling </div>
+          </div>
+          <ladel>Property type</ladel>
+
+          <div className="radio-btn">
+          <div className="radio"><input type="radio" name="" value="prop-type" className="" onChange={(e) => setProp(e.target.value)}/> House </div>
+          <div className="radio"><input type="radio" name="" value="prop-type" className="" onChange={(e) => setProp(e.target.value)}/> Apertment </div>
+          </div>
           <ladel>Description</ladel>
-          <textarea name="des" id="" cols="30" rows="10" className="" ></textarea>
-          <button className="btn">submit</button>
+
+          <textarea name="des" id="" cols="30" rows="10" className="" onChange={(e) => setDes(e.target.value)}></textarea>
+          <button className="btn" onClick={add}>submit</button>
        </form>
         </div>
        

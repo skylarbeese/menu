@@ -7,6 +7,7 @@ function AllListings1() {
       <div className="landing-img">
         <div className="grad-img"></div>
         <div className="landing-text"> 
+        <h1>Search for a location</h1> 
         <form action="" className="form-sea">
         <i class="fa fa-search" aria-hidden="true"></i>
 
