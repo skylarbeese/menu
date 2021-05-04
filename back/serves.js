@@ -29,10 +29,17 @@ app.post('/inst',  async (req, res) => {
     res.json('error, your post have not been listed') 
    }
 }
-   
+
      catch(err) {
   
     }
   })
-
+  app.get('/inst/read', async (req, res) => {
+    Form.find({}, (err, result) => {
+      if(err) {
+        res.send(err)
+      }
+      res.send(result)
+    })
+  })
 app.listen(3001)

@@ -119,3 +119,22 @@
         border: none;
     }
  
+    .con {
+        margin-top: 2rem;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .listing-box {
+          width: 80%;
+          height: 20vh;
+          background-color: cornsilk;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+
+    }
+    .listing-box h1 { 
+       font-size: 1rem;
+    }

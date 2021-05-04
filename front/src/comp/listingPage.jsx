@@ -5,6 +5,7 @@ function ListingPage() {
   const [buy, setBuy] = useState('')
   const [prop, setProp] = useState('')
   const [des, setDes] = useState('')
+  const [message, setMessage] = useState('')
   const add = (e) => {
     e.preventDefault()
   Axios.post('/',  {
@@ -23,6 +24,7 @@ function ListingPage() {
 
       </div>
         <div className="form">
+         <h1 className="mess-con">{message}</h1>
         <form>
           <ladel>Rent/Own</ladel>
           

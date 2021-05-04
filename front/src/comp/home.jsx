@@ -2,11 +2,11 @@ import './Home.css';
 import Footer from './footer'
 import Nav from './nav'
 import Landing from './landing'
-function Home() {
+function Home({titleArray}) {
   return (
     <>
     <Nav />
-    <Landing />
+    <Landing titleArray={titleArray}/>
     <Footer />
     </>
   );
