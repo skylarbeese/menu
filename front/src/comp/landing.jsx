@@ -3,6 +3,12 @@ import {Link} from "react-router-dom"
 function Landing({titleArray}) {
  // const le = titleArray.length
  // console.log(le)
+ const title = titleArray.filter(rent => {
+  return rent.buy === 'Rent'
+})
+const titleBuy = titleArray.filter(buy => {
+  return buy.buy === 'Buy'
+})
   return (
    <div className="landing-con">
       <div className="landing-img">
@@ -78,6 +84,110 @@ function Landing({titleArray}) {
            <h1>there are no current listings</h1>
           </div>
         </div>}
+
+        <div className="text-link"><Link to="./comp/rent"><h1>see all rent listings</h1></Link></div>
+
+        {title.length > 1 ? <div className="con">
+  
+  <div className="info-con">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1>{title[0].buy}</h1>
+         <div className="underline"></div>
+         <p>
+         {title[0].des}
+         </p>
+       </div>
+       </div>
+     </div>
+
+     <div className="info-con">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1>{title[1].buy}</h1>
+         <div className="underline"></div>
+         <p>
+         {title[1].des}
+         </p>
+       </div>
+       </div>
+     </div>
+
+   </div> : 
+   title.length === 1 ?
+   <div className="con">
+   <div className="info-con">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1>{title[0].buy}</h1>
+         <div className="underline"></div>
+         <p>
+         {title[0].des}
+         </p>
+       </div>
+       </div>
+       </div>
+     </div> : <div className="con">
+       <div className="listing-box">
+         <h1>there are no current listings</h1>
+        </div>
+      </div>}
+
+
+      <div className="text-link"><Link to=""><h1>see all buying listings</h1></Link></div>
+
+        {titleBuy.length > 1 ? <div className="con">
+  
+  <div className="info-con">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1>{titleBuy[0].buy}</h1>
+         <div className="underline"></div>
+         <p>
+         {titleBuy[0].des}
+         </p>
+       </div>
+       </div>
+     </div>
+
+     <div className="info-con">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1>{titleBuy[1].buy}</h1>
+         <div className="underline"></div>
+         <p>
+         {titleBuy[1].des}
+         </p>
+       </div>
+       </div>
+     </div>
+
+   </div> : 
+   titleBuy.length === 1 ?
+   <div className="con">
+   <div className="info-con">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1>{titleBuy[0].buy}</h1>
+         <div className="underline"></div>
+         <p>
+         {titleBuy[0].des}
+         </p>
+       </div>
+       </div>
+       </div>
+     </div> : <div className="con">
+       <div className="listing-box">
+         <h1>there are no current listings</h1>
+        </div>
+      </div>}
+
      
      </div>
      </div>

@@ -1,10 +1,9 @@
-import './AllListings.css';
 import React, {useEffect, useState} from 'react'
-function AllInfo({titleArray, search, data, searchTerm}) {
- const e =  search.length
- console.log(e)
+import './Rent.css';
+function RentI({titleArray, search, data, searchTerm}) {
   return (
     <>
+   
     {search.length > 0 ? <div>{search.map((ti, index) => {
 
 return (<>
@@ -30,7 +29,8 @@ return (<>
  </div>
 </div>}
     </>
+  
   );
 }
 
-export default AllInfo;
+export default RentI;
