@@ -3,6 +3,7 @@ import About from './comp/about'
 import Listing from './comp/listing'
 import AllListings from './comp/allListings'
 import Rent from './comp/rent'
+import Buy from './comp/buy'
 import Axios from 'axios'
 import './App.css';
 import React from 'react'
@@ -23,6 +24,7 @@ function App() {
       <Route path="/comp/listing" exact><Listing /></Route>
       <Route path="/comp/allListings" exact><AllListings titleArray={titleArray}/></Route>
       <Route path="/comp/rent" exact><Rent titleArray={titleArray}/></Route>
+      <Route path="/comp/buy" exact><Buy titleArray={titleArray}/></Route>
     </Switch>
   </Router>
   );

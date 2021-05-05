@@ -137,7 +137,7 @@ const titleBuy = titleArray.filter(buy => {
       </div>}
 
 
-      <div className="text-link"><Link to=""><h1>see all buying listings</h1></Link></div>
+      <div className="text-link"><Link to="./comp/buy"><h1>see all buying listings</h1></Link></div>
 
         {titleBuy.length > 1 ? <div className="con">
   
