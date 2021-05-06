@@ -1,7 +1,15 @@
 import './Buy.css';
 import React, {useEffect, useState} from 'react'
-function Buy1() {
+import BuyI from './buyI'
+function Buy1(props) {
+    const inputEl = React.useRef()
+    const [data, setData] = useState("")
+  
+    const searchTerm = () => {
+      props.searchHandler(inputEl.current.value)
+    }
   return (
+    <>
     <div className="All-con">
     <div className="landing-img">
       <div className="grad-img"></div>
@@ -22,6 +30,13 @@ function Buy1() {
     </div>
   
     </div>
+
+{props.searchTerm.length > 1 ? <div className="loc"><div className="locc"><h1 className="sear">({props.search.length}) listings found for properties in location: </h1><h1 className="locat">{props.searchTerm}</h1></div></div>
+: <div className="loc"></div>}
+
+{props.search.length > 0 ? ( <BuyI titleArray={props.titleArray}  searchTerm={props.searchTerm} search={props.search} data={data}/> )
+ : <div><div className="no-sear"><h1>there are no results for this search Rent, try another location</h1></div></div>} 
+ </>
   );
 }
 

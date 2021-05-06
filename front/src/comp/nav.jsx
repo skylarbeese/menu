@@ -45,8 +45,8 @@ function Nav() {
          <div className={`dropdown-content ${mouse1 ? 'drop-show' : 'drop-hide'}`}>
             <Link to="/comp/about" >About</Link>
             <Link to="/comp/allListings">see all listings</Link>
-           <Link to="">Rent</Link>
-           <Link to="">Buy</Link>
+           <Link to="/comp/rent">Rent</Link>
+           <Link to="/comp/buy">Buy</Link>
          </div> 
          
         </div>
@@ -94,7 +94,7 @@ function Nav() {
         <Link to="/comp/about" >About</Link>
         <Link to="/comp/allListings">see all listings</Link>
         <Link to="/comp/rent">Rent</Link>
-        <Link to="">Buy</Link>
+        <Link to="/comp/buy">Buy</Link>
         </div> 
         
        </div>
