@@ -36,97 +36,213 @@ const titleBuy = titleArray.filter(buy => {
       </div>
     <div className="info">
     <div className="text-link"><Link to="./comp/allListings"><h1>see all listings</h1></Link></div>
-    {titleArray.length > 1 ? <div className="con">
+    {/*------------------------------------------------------------------------------------------------*/}
+    {titleArray.length > 2 ? <div className="con-a">
   
-    <div className="info-con">
+    <div className="info-con-c">
        <div className="info-box-con">
        <div className="image-box"></div>
          <div className="text-info">
-           <h1>{titleArray[0].buy}</h1>
+           <h1><Link to={{pathname: `/comp/more/${titleArray[0]._id}`}}>{titleArray[0].buy}</Link></h1>
            <div className="underline"></div>
+           <div className="para-text">
            <p>
            {titleArray[0].des}
            </p>
+           </div>
          </div>
          </div>
        </div>
 
-       <div className="info-con">
+       <div className="info-con-c">
        <div className="info-box-con">
        <div className="image-box"></div>
          <div className="text-info">
-           <h1>{titleArray[1].buy}</h1>
+           <h1><Link to={{pathname: `/comp/more/${titleArray[1]._id}`}}>{titleArray[1].buy}</Link></h1>
            <div className="underline"></div>
+           <div className="para-text">
            <p>
            {titleArray[1].des}
            </p>
+           </div>
+         </div>
+         </div>
+       </div>
+       
+       <div className="info-con-c">
+       <div className="info-box-con">
+       <div className="image-box"></div>
+         <div className="text-info">
+           <h1><Link to={{pathname: `/comp/more/${titleArray[2]._id}`}}>{titleArray[2].buy}</Link></h1>
+           <div className="underline"></div>
+           <div className="para-text">
+           <p>
+           {titleArray[2].des}
+           </p>
+           </div>
          </div>
          </div>
        </div>
 
      </div> : 
-     titleArray.length === 1 ?
-     <div className="con">
-     <div className="info-con">
+     titleArray.length === 2 ?
+     <div className="con-a">
+     <div className="info-con-c">
        <div className="info-box-con">
        <div className="image-box"></div>
          <div className="text-info">
-           <h1>{titleArray[0].buy}</h1>
+           <h1><Link to={{pathname: `/comp/more/${titleArray[0]._id}`}}>{titleArray[0].buy}</Link></h1>
            <div className="underline"></div>
+           <div className="para-text">
            <p>
            {titleArray[0].des}
            </p>
+           </div>
          </div>
          </div>
          </div>
-       </div> : <div className="con">
+    
+       
+       <div className="info-con-c">
+       <div className="info-box-con">
+       <div className="image-box"></div>
+         <div className="text-info">
+           <h1><Link to={{pathname: `/comp/more/${titleArray[1]._id}`}}>{titleArray[1].buy}</Link></h1>
+           <div className="underline"></div>
+           <div className="para-text">
+           <p>
+           {titleArray[1].des}
+           </p>
+           </div>
+         </div>
+         </div>
+       </div>
+       </div>: 
+       
+       titleArray.length === 1 ?
+       <div className="con-a">
+       <div className="info-con-c">
+         <div className="info-box-con">
+         <div className="image-box"></div>
+           <div className="text-info">
+             <h1><Link to={{pathname: `/comp/more/${titleArray[0]._id}`}}>{titleArray[0].buy}</Link></h1>
+             <div className="underline"></div>
+             <div className="para-text">
+             <p>
+             {titleArray[0].des}
+             </p>
+             </div>
+           </div>
+           </div>
+           </div>
+           </div>
+
+       : <div className="con">
          <div className="listing-box">
            <h1>there are no current listings</h1>
           </div>
         </div>}
-
+    {/*----------------------------------------------------------------------------------------------------*/}
         <div className="text-link"><Link to="./comp/rent"><h1>see all rent listings</h1></Link></div>
-
-        {title.length > 1 ? <div className="con">
+      {/*----------------------------------------------------------------------------------------------------*/}
+        {title.length > 2 ? <div className="con-a">
   
-  <div className="info-con">
+  <div className="info-con-c">
      <div className="info-box-con">
      <div className="image-box"></div>
        <div className="text-info">
-         <h1>{title[0].buy}</h1>
+         <h1><Link to={{pathname: `/comp/more/${title[0]._id}`}}>{title[0].buy}</Link></h1>
          <div className="underline"></div>
+         <div className="para-text">
          <p>
          {title[0].des}
          </p>
+         </div>
        </div>
        </div>
      </div>
 
-     <div className="info-con">
+     <div className="info-con-c">
      <div className="info-box-con">
      <div className="image-box"></div>
        <div className="text-info">
-         <h1>{title[1].buy}</h1>
+         <h1><Link to={{pathname: `/comp/more/${title[1]._id}`}}>{title[1].buy}</Link></h1>
          <div className="underline"></div>
+         <div className="para-text">
          <p>
          {title[1].des}
          </p>
+         </div>
        </div>
        </div>
      </div>
 
-   </div> : 
-   title.length === 1 ?
-   <div className="con">
-   <div className="info-con">
+     <div className="info-con-c">
      <div className="info-box-con">
      <div className="image-box"></div>
        <div className="text-info">
-         <h1>{title[0].buy}</h1>
+         <h1><Link to={{pathname: `/comp/more/${title[2]._id}`}}>{title[2].buy}</Link></h1>
          <div className="underline"></div>
+         <div className="para-text">
+         <p>
+         {title[2].des}
+         </p>
+         </div>
+       </div>
+       </div>
+     </div>
+
+  
+
+   </div> : 
+   title.length === 2 ?
+
+   <div className="con-a">
+  
+  <div className="info-con-c">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1><Link to={{pathname: `/comp/more/${title[0]._id}`}}>{title[0].buy}</Link></h1>
+         <div className="underline"></div>
+         <div className="para-text">
          <p>
          {title[0].des}
          </p>
+         </div>
+       </div>
+       </div>
+     </div>
+
+     <div className="info-con-c">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1><Link to={{pathname: `/comp/more/${title[1]._id}`}}>{title[1].buy}</Link></h1>
+         <div className="underline"></div>
+         <div className="para-text">
+         <p>
+         {title[1].des}
+         </p>
+         </div>
+       </div>
+       </div>
+     </div>
+     </div>:
+
+   title.length === 1 ?
+   <div className="con-a">
+   <div className="info-con-c">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1><Link to={{pathname: `/comp/more/${title[0]._id}`}}>{title[0].buy}</Link></h1>
+         <div className="underline"></div>
+         <div className="para-text">
+         <p>
+         {title[0].des}
+         </p>
+         </div>
        </div>
        </div>
        </div>
@@ -136,49 +252,104 @@ const titleBuy = titleArray.filter(buy => {
         </div>
       </div>}
 
-
+  {/*----------------------------------------------------------------------------------------------------*/}
       <div className="text-link"><Link to="./comp/buy"><h1>see all buying listings</h1></Link></div>
 
-        {titleBuy.length > 1 ? <div className="con">
-  
-  <div className="info-con">
+        {titleBuy.length > 1 ? <div className="con-a">
+    {/*----------------------------------------------------------------------------------------------------*/}
+  <div className="info-con-c">
      <div className="info-box-con">
      <div className="image-box"></div>
        <div className="text-info">
-         <h1>{titleBuy[0].buy}</h1>
+         <h1><Link to={{pathname: `/comp/more/${titleBuy[0]._id}`}}>{titleBuy[0].buy}</Link></h1>
          <div className="underline"></div>
+         <div className="para-text">
          <p>
          {titleBuy[0].des}
          </p>
+         </div>
        </div>
        </div>
      </div>
 
-     <div className="info-con">
+     <div className="info-con-c">
      <div className="info-box-con">
      <div className="image-box"></div>
        <div className="text-info">
-         <h1>{titleBuy[1].buy}</h1>
+         <h1><Link to={{pathname: `/comp/more/${title[1]._id}`}}>{titleBuy[1].buy}</Link></h1>
          <div className="underline"></div>
+         <div className="para-text">
          <p>
          {titleBuy[1].des}
          </p>
+        </div>
+       </div>
+       </div>
+     </div>
+
+     <div className="info-con-c">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1><Link to={{pathname: `/comp/more/${titleBuy[2]._id}`}}>{titleBuy[2].buy}</Link></h1>
+         <div className="underline"></div>
+         <div className="para-text">
+         <p>
+         {titleBuy[2].des}
+         </p>
+        </div>
        </div>
        </div>
      </div>
 
    </div> : 
-   titleBuy.length === 1 ?
-   <div className="con">
-   <div className="info-con">
+   titleBuy.length === 2 ?
+   <div className="con-a">
+   <div className="info-con-c">
      <div className="info-box-con">
      <div className="image-box"></div>
        <div className="text-info">
-         <h1>{titleBuy[0].buy}</h1>
+         <h1><Link to={{pathname: `/comp/more/${titleBuy[0]._id}`}}>{titleBuy[0].buy}</Link></h1>
          <div className="underline"></div>
+         <div className="para-text">
          <p>
          {titleBuy[0].des}
          </p>
+         </div>
+       </div>
+       </div>
+     </div>
+
+     <div className="info-con-c">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1><Link to={{pathname: `/comp/more/${titleBuy[1]._id}`}}>{titleBuy[1].buy}</Link></h1>
+         <div className="underline"></div>
+         <div className="para-text">
+         <p>
+         {titleBuy[1].des}
+         </p>
+        </div>
+       </div>
+       </div>
+     </div>
+
+
+  </div> :
+   titleBuy.length === 1 ?
+   <div className="con-a">
+   <div className="info-con-c">
+     <div className="info-box-con">
+     <div className="image-box"></div>
+       <div className="text-info">
+         <h1><Link to={{pathname: `/comp/more/${titleBuy[0]._id}`}}>{titleBuy[0].buy}</Link></h1>
+         <div className="underline"></div>
+         <div className="para-text">
+         <p>
+         {titleBuy[0].des}
+         </p>
+         </div>
        </div>
        </div>
        </div>
@@ -188,7 +359,7 @@ const titleBuy = titleArray.filter(buy => {
         </div>
       </div>}
 
-     
+  {/*----------------------------------------------------------------------------------------------------*/}
      </div>
      </div>
 

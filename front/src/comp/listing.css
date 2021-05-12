@@ -85,4 +85,13 @@ textarea {
     border-radius: 4px;
     margin: 1rem;
   }
- 
+ .text-in {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    width: 70%;
+    padding: 0.25em 0.5em;
+    background-color: transparent;
+    
+    border-radius: 4px;
+    margin: 1rem;
+ }

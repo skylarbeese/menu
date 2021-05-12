@@ -1,11 +1,12 @@
 import './AllListings.css';
 import React, {useEffect, useState} from 'react'
+import {Link} from "react-router-dom"
 function AllInfo({titleArray, search, data, searchTerm}) {
  const e =  search.length
  console.log(e)
   return (
     <>
-    {search.length > 0 ? <div>{search.map((ti, index) => {
+    {search.length > 0 ? <div className="abo">{search.map((ti, index) => {
 
 return (<>
   <div className="info-con">
@@ -13,12 +14,14 @@ return (<>
 <div className="info-box-con">
   <div className="image-box"></div>
   <div className="text-info">
- 
-    <h1>{ti.buy}</h1>
+   
+    <h1><Link to={{pathname: `/comp/more/${ti._id}`}}>{ti.buy}</Link></h1>
     <div className="underline"></div>
+    <div className="para-text">
     <p>
     {ti.des}
     </p>
+    </div>
   </div>
  
 </div> 

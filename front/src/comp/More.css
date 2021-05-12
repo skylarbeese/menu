@@ -1,0 +1,343 @@
+.more-con{
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    font-size: 1.2rem;
+}
+.img-con {
+    width: 80%;
+    height: 70vh;
+    background-color: blue;
+}
+.info-con-more{
+   
+    
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.info-more{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.bath-bed{
+    
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    width: 80%;
+}
+.city-zip-sta {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+}
+.loca {
+    margin-left: 2rem;
+}
+.city-zip-sta .city{
+    margin-right: .5rem;
+}
+.city-zip-sta .sta{
+    margin-right: .5rem;
+}
+.city-zip-sta .zip{
+    margin-right: .5rem;
+}
+.price h1{
+    float: right;
+    margin-right: 2rem;
+    font-size: 2rem;
+    padding: 1rem;
+}
+.re {
+    
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    
+}
+.address h1{
+  font-size: 1.6rem;
+  padding: 1rem;
+}
+.underline {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+
+.int {
+    justify-content: space-around;
+    margin: 2rem;
+    display: flex;
+    width: 100%;
+}
+.des {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 40%;
+   
+}
+.details {
+    background-color: cadetblue;
+    width: 50%;
+    padding: 1rem;
+}
+.detail-con {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.bath-con {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.bed-con {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.full-bath-more {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.bed-more {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.half-bath-more {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.base-more h1 {
+    margin-right: .3rem;
+}
+.base-more {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.sell-con {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+.inti h1{
+    font-size: 1rem;
+    color: rgb(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
+}
+.btn {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%
+}
+.btn-con {
+  
+    display: flex;
+    width: 80%;
+}
+.btn-con a{
+  margin: .2rem;
+}
+@media screen and (min-width: 0px) and (max-width:1000px) {
+    .int {
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem;
+        
+        width: 100%;
+    }
+    .des {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 80%;
+       background-color: transparent;
+       margin-bottom: 2rem;
+    }
+    .details {
+        background-color: cadetblue;
+        width: 80%;
+        padding: 1rem;
+    }
+    .re {
+    
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        
+    }
+    .bath-bed{
+    
+      float: right;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 0px) and (max-width:700px) {
+    .info-more{
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .int {
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem;
+        
+        width: 100%;
+    }
+    .des {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 80%;
+       background-color: transparent;
+       margin-bottom: 2rem;
+    }
+    .details {
+        background-color: cadetblue;
+        width: 80%;
+        padding: 1rem;
+    }
+    .price h1{
+        font-size: 1.6rem;
+    }
+    .re {
+    
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        
+    }
+    .city-zip-sta {
+        justify-content: none;
+        align-items: none;
+        display: flex;
+        
+    }
+    .address h1 {
+        font-size: 1.5rem;
+    }
+    .loca {
+        margin-left: 0;
+    }
+    .bath h1, .bed h1, .sqft h1{
+      font-size: 1rem;
+      
+    }
+    .city-zip-sta .city h1{
+        font-size: 1rem;
+    }
+    .city-zip-sta .sta h1{
+        font-size: 1rem;
+    }
+    .city-zip-sta .zip h1{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width:550px) {
+    .info-more{
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .int {
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem;
+        
+        width: 100%;
+    }
+    .des {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 80%;
+       background-color: transparent;
+       margin-bottom: 2rem;
+    }
+    .details {
+        background-color: cadetblue;
+        width: 80%;
+        padding: 1rem;
+    }
+    .price h1{
+        font-size: 1rem;
+    }
+    .re {
+    
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        
+    }
+    .city-zip-sta {
+        justify-content: none;
+        align-items: none;
+        display: flex;
+        
+    }
+    .address h1 {
+        font-size: 1rem;
+    }
+    .loca {
+        margin-left: 0;
+    }
+    .bath h1, .bed h1, .sqft h1{
+      font-size: 1rem;
+      
+    }
+    .city-zip-sta .city h1{
+        font-size: 1rem;
+    }
+    .city-zip-sta .sta h1{
+        font-size: 1rem;
+    }
+    .city-zip-sta .zip h1{
+        font-size: 1rem;
+    }
+}

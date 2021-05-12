@@ -2,11 +2,11 @@
 import Footer from './footer'
 import Nav from './nav'
 import ListingPage from './listingPage'
-function Listing() {
+function Listing(props) {
   return (
     <>
     <Nav />
-    <ListingPage />
+    <ListingPage props={props}/>
     <Footer />
     </>
   );

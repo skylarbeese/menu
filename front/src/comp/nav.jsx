@@ -40,10 +40,10 @@ function Nav() {
 
         <div className="dropdown">
          {/* onMouseOver={mou1} */}
-         <Link to="" >About</Link>
+         <Link to="" >Search Listing</Link>
          <i class="fas fa-angle-down"></i>
          <div className={`dropdown-content ${mouse1 ? 'drop-show' : 'drop-hide'}`}>
-            <Link to="/comp/about" >About</Link>
+            
             <Link to="/comp/allListings">see all listings</Link>
            <Link to="/comp/rent">Rent</Link>
            <Link to="/comp/buy">Buy</Link>
@@ -52,12 +52,11 @@ function Nav() {
         </div>
         <div className="dropdown">
         {/*onClick={mou2} */}
-          <Link to="">drop</Link>
+          <Link to="">Create a listing</Link>
 
           <div className={`dropdown-content ${mouse2 ? 'drop-show' : 'drop-hide'}`}>
             <Link to="/comp/listing">Listing</Link>
-            <Link to="">Home</Link>
-            <Link to="">Home</Link>
+            <Link to="/comp/about" >About</Link>
           </div> 
 
        </div>
@@ -88,10 +87,10 @@ function Nav() {
 
        <div className="dropdown">
           
-        <Link onClick={mou1}>About</Link>
+        <Link onClick={mou1}>Search listings</Link>
         <i class="fas fa-angle-down"></i>
         <div className={`dropdown-content ${mouse1 ? 'drop-show' : 'drop-hide'}`}>
-        <Link to="/comp/about" >About</Link>
+        
         <Link to="/comp/allListings">see all listings</Link>
         <Link to="/comp/rent">Rent</Link>
         <Link to="/comp/buy">Buy</Link>
@@ -100,12 +99,12 @@ function Nav() {
        </div>
        <div className="dropdown">
        
-         <Link to="" onClick={mou2}>Drop</Link>
+         <Link to="" onClick={mou2}>Create a listing</Link>
 
          <div className={`dropdown-content ${mouse2 ? 'drop-show' : 'drop-hide'}`}>
+         <Link to="/comp/about" >About</Link>
          <Link to="/comp/listing">Listing</Link>
-           <Link to="">Home</Link>
-           <Link to="">Home</Link>
+           
          </div> 
 
       </div>

@@ -1,7 +1,7 @@
 import './listing.css';
 import Axios from 'axios'
-import { useState } from 'react';
-function ListingPage(props) {
+import { useState, useEffect } from 'react';
+function Edit(props) {
   const [buy, setBuy] = useState('')
   const [prop, setProp] = useState('')
   const [des, setDes] = useState('')
@@ -15,9 +15,29 @@ function ListingPage(props) {
   const [bed, setBed] = useState(0)
   const [sq, setSq] = useState(0)
   const [message, setMessage] = useState('')
+  useEffect(() => {
+    try{
+     Axios.get(`/read/${props.match.params.id}`)
+      .then(res => [setBuy(res.data.buy), setProp(res.data.prop),
+       setFull(res.data.full),
+       setHalf(res.data.half),
+       setBed(res.data.bed),
+       setSq(res.data.sq),
+       setPrice(res.data.price),
+       setAdr(res.data.adr),
+       setCity(res.data.city),
+       setState(res.data.state),
+       setZip(res.data.zip),
+       setDes(res.data.des)
+   ])
+ }
+      catch(err) {
+        console.log(err)
+      }
+    }, [])
   const add = (e) => {
     e.preventDefault()
-  Axios.post('/',  {
+  Axios.put(`/edit/${props.match.params.id}`,  {
     buy: buy, prop: prop, des: des, full: full,
     half: half, bed: bed, sq: sq, price: price,
     adr: adr, city: city, state: state, zip: zip
@@ -53,28 +73,28 @@ function ListingPage(props) {
           </div>
 
           <label>Price*</label>
-             <input name="bathrooms" type="text" placeholder="price" className="text-in" onChange={(e) => setPrice(e.target.value)} required/>
-           <label>Full Bathrooms*</label>
-             <input name="bathrooms" type="number" placeholder="Full Bathrooms" className="text-in" onChange={(e) => setFull(e.target.value)} required/>
+             <input name="bathrooms" type="text" placeholder="price" value={price} className="text-in" onChange={(e) => setPrice(e.target.value)} required/>
+             <label>Full Bathrooms*</label>
+             <input name="bathrooms" type="number" placeholder="Full Bathrooms" value={full} className="text-in" onChange={(e) => setFull(e.target.value)} required/>
              <label>Half Bathrooms*</label>
-             <input name="bathrooms" type="number" placeholder="Half Bathrooms" className="text-in" onChange={(e) => setHalf(e.target.value)} required/>
+             <input name="bathrooms" type="number" placeholder="Half Bathrooms" value={half} className="text-in" onChange={(e) => setHalf(e.target.value)} required/>
              <label>Bedrooms*</label>
-             <input name="bathrooms" type="number" placeholder="Bedrooms" className="text-in" onChange={(e) => setBed(e.target.value)} required/>
+             <input name="bathrooms" type="number" placeholder="Bedrooms" value={bed} className="text-in" onChange={(e) => setBed(e.target.value)} required/>
              <label>Sqft*</label>
-             <input name="bathrooms" type="number" placeholder="Sqft" className="text-in" onChange={(e) => setSq(e.target.value)} required/>
+             <input name="bathrooms" type="number" placeholder="Sqft" value={sq} className="text-in" onChange={(e) => setSq(e.target.value)} required/>
 
              <label>Address*</label>
-             <input name="bathrooms" type="text" placeholder="Address" className="text-in" onChange={(e) => setAdr(e.target.value)} required/>
+             <input name="bathrooms" type="text" placeholder="Address" value={adr} className="text-in" onChange={(e) => setAdr(e.target.value)} required/>
              <label>City*</label>
-             <input name="bathrooms" type="text" placeholder="City" className="text-in" onChange={(e) => setCity(e.target.value)} required/>
+             <input name="bathrooms" type="text" placeholder="City" value={city} className="text-in" onChange={(e) => setCity(e.target.value)} required/>
              <label>State*</label>
-             <input name="bathrooms" type="text" placeholder="State" className="text-in" onChange={(e) => setState(e.target.value)} required/>
+             <input name="bathrooms" type="text" placeholder="State" value={state} className="text-in" onChange={(e) => setState(e.target.value)} required/>
              <label>Zip Code*</label>
-             <input name="bathrooms" type="text" placeholder="Zip code" className="text-in" onChange={(e) => setZip(e.target.value)} required/>
+             <input name="bathrooms" type="text" placeholder="Zip code" value={zip} className="text-in" onChange={(e) => setZip(e.target.value)} required/>
 
           <ladel>Description</ladel>
 
-          <textarea name="des" id="" cols="30" rows="10" className="" onChange={(e) => setDes(e.target.value)}></textarea>
+          <textarea name="des" id="" cols="30" rows="10" value={des} className="" onChange={(e) => setDes(e.target.value)}></textarea>
           <button className="btn" onClick={add}>submit</button>
        </form>
         </div>
@@ -84,4 +104,4 @@ function ListingPage(props) {
   );
 }
 
-export default ListingPage;
+export default Edit;
