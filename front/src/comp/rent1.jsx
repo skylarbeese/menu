@@ -35,7 +35,7 @@ function Rent1(props) {
       : <div className="loc"></div>}
   
       {props.search.length > 0 ? ( <RentI titleArray={props.titleArray}  searchTerm={props.searchTerm} search={props.search} data={data}/> )
-       : <div><div className="no-sear"><h1>there are no results for this search Rent, try another location</h1></div></div>} 
+       : <div><div className="no-sear"><h1>there are no results for{ props.searchTerm.length === 0 ? <> propertys for rent</>: <>{props.searchTerm}</>}, try another location</h1></div></div> } 
     </>
   );
 }

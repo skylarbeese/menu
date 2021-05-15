@@ -42,14 +42,14 @@ function ListingPage(props) {
           
           <div className="radio-btn">
           <div className="radio"><input type="radio" name="prop-buy" value="Rent" className="" onChange={(e) => setBuy(e.target.value)} /> Renting</div>
-          <div className="radio"><input type="radio" name="prop-buy" value="Buy" className="" onChange={(e) => setBuy(e.target.value)}/> Saling </div>
+          <div className="radio"><input type="radio" name="prop-buy" value="Buy" className="" onChange={(e) => setBuy(e.target.value)}/> Selling </div>
           </div>
           <ladel>Property type</ladel>
 
           <div className="radio-btn">
           <div className="radio"><input type="radio" name="" value="House" className="House" onChange={(e) => setProp(e.target.value)}/> House </div>
           <div className="radio"><input type="radio" name="" value="Town House" className="Town House" onChange={(e) => setProp(e.target.value)}/> Town House </div>
-          <div className="radio"><input type="radio" name="" value="Apertment" className="Apertment" onChange={(e) => setProp(e.target.value)}/> Apertment </div>
+          <div className="radio"><input type="radio" name="" value="Apertment" className="Apartment" onChange={(e) => setProp(e.target.value)}/> Apartment </div>
           </div>
 
           <label>Price*</label>

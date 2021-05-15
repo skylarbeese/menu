@@ -109,8 +109,9 @@ function More(props) {
                <h1>interior</h1>
                
              </div>
+            
              <div className="bath-con">
-            {full > 0 ?
+             {full > 0 ?           
              <div className="full-bath-more">
                <h1>{full}</h1>
                <h1 className="full-bath-text">full bathrooms</h1>

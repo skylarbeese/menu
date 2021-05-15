@@ -168,6 +168,14 @@ h1{
 .btn-con a{
   margin: .2rem;
 }
+button {
+    padding-bottom: .4rem;
+    padding-top: .4rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border: none;
+    background-color: coral;
+}
 @media screen and (min-width: 0px) and (max-width:1000px) {
     .int {
         justify-content: space-around;
@@ -339,5 +347,20 @@ h1{
     }
     .city-zip-sta .zip h1{
         font-size: 1rem;
+    }
+    .bath-bed{
+    
+       
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    .bath, .bed, .sqft {
+        
+        display: flex;
+    }
+    .bath h1, .bed h1, .sqft h1{
+        
+        margin: .1rem;
     }
 }

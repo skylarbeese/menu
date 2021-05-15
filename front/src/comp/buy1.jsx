@@ -35,7 +35,7 @@ function Buy1(props) {
 : <div className="loc"></div>}
 
 {props.search.length > 0 ? ( <BuyI titleArray={props.titleArray}  searchTerm={props.searchTerm} search={props.search} data={data}/> )
- : <div><div className="no-sear"><h1>there are no results for this search Rent, try another location</h1></div></div>} 
+ : <div><div className="no-sear"><h1>there are no results for {props.searchTerm.length === 0 ? <>properteys for sell</> : <>{props.searchTerm}</>}, try another location</h1></div></div>} 
  </>
   );
 }
