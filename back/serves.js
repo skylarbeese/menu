@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const Form = require('./models/form')
+const Login = require('./models/login')
 const cors = require('cors')
 
 const app = express()
@@ -94,6 +95,75 @@ app.post('/inst',  async (req, res) => {
        
        .then(() => res.json('your post has been UPDATED'))
      })
+  })
+
+
+  app.post('/inst/log',  async (req, res) => {
+    try{
+      const email = req.body.email;
+      const user = req.body.user;
+      const pass = req.body.pass;
+      const passV = req.body.passV;
+     
+      const log = new Login({
+       email, user, pass, passV
+
+
+   })
+   const ex = await Login.findOne({pass: pass})
+   if(!email || !user || !pass || !passV) {
+    res.json('empty feilds')
+   } else if(pass !== passV) {
+    res.json('passwords do not match')
+   } else if(ex) {
+    res.json('passwords ex')
+   
+   } else {
+
+   
+   const newAcc = log.save()
+   if(newAcc) {
+     res.json('your account has been made')
+   } else {
+    res.json('error, your account has not be made') 
+   }
+  }
+}
+
+     catch(err) {
+  
+    }
+  })
+
+  app.post('/inst/login',  async (req, res) => {
+    try{
+      const email = req.body.email;
+      const user = req.body.user;
+      const pass = req.body.pass;
+     
+      const userEx = await Login.findOne({email})
+      const passEx = await Login.findOne({pass})
+      if(!email || !pass)   {
+      res.json('enter feilds')
+      } else if(!userEx) {
+        res.json('wrong email')
+      } else if(!passEx) {
+        res.json('wrong pass')
+      
+      } else {
+       const newAcc = log.save()
+      if(newAcc) {
+       res.json('your account has been made')
+      } else {
+       res.json('error, your account has not be made') 
+   }
+  } 
+}
+
+     catch(err) {
+  
+    }
+  
   })
   
 app.listen(3001)

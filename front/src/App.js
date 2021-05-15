@@ -5,6 +5,8 @@ import AllListings from './comp/allListings'
 import Rent from './comp/rent'
 import Buy from './comp/buy'
 import More from './comp/more'
+import Login from './comp/login'
+import Log from './comp/log'
 import Edit1 from './comp/edit1'
 import Axios from 'axios'
 import './App.css';
@@ -28,6 +30,8 @@ function App() {
       <Route path="/comp/allListings" exact><AllListings titleArray={titleArray}/></Route>
       <Route path="/comp/rent" exact><Rent titleArray={titleArray}/></Route>
       <Route path="/comp/buy" exact><Buy titleArray={titleArray}/></Route>
+      <Route path="/comp/login"  render={(props) => <Login {...props}  titleArray={titleArray}/>} />
+      <Route path="/comp/log"  render={(props) => <Log {...props}  titleArray={titleArray}/>} />
       <Route path="/comp/more/:id"  render={(props) => <More {...props}  titleArray={titleArray}/>} />
       
       <Route path="/comp/edit/:id"  render={(props) => <Edit1 {...props}  titleArray={titleArray}/>} /> 

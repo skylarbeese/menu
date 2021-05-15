@@ -5,6 +5,7 @@ function Nav() {
     const [wid, setWid] = useState(false)
     const [mouse1, setMouse1] = useState(false)
     const [mouse2, setMouse2] = useState(false)
+    const [mouse3, setMouse3] = useState(false)
     const [menu, setMenu] = useState(false)
     const hand = () => {
         if(window.innerWidth > 800) {
@@ -19,6 +20,9 @@ function Nav() {
       const mou2 = () => {
         setMouse2(!mouse2)
     }
+    const mou3 = () => {
+      setMouse3(!mouse3)
+  }
     const menuHandler = () => {
       setMenu(!menu)
   }
@@ -60,7 +64,15 @@ function Nav() {
           </div> 
 
        </div>
-        <Link to="">home</Link>
+       <div className="dropdown">
+       <Link to="">account</Link>
+
+         <div className={`dropdown-content ${mouse2 ? 'drop-show' : 'drop-hide'}`}>
+           <Link to="/comp/login">create an account</Link>
+           <Link to="/comp/log" >login/logout</Link>
+         </div> 
+       </div>
+
 
       </div>  
        </nav>
@@ -108,7 +120,16 @@ function Nav() {
          </div> 
 
       </div>
-       <Link to="">Home</Link>
+      <div className="dropdown">
+       
+         <Link to="" onClick={mou3}>Create an accout</Link>
+
+       <div className={`dropdown-content ${mouse3 ? 'drop-show' : 'drop-hide'}`}>
+         <Link to="/comp/login" >create an account</Link>
+         <Link to="/comp/log">Login/logout</Link>
+      </div> 
+
+    </div>
 
      </div>  
      
