@@ -1,7 +1,8 @@
 import './listing.css';
 import './Login.css';
 import Axios from 'axios'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function Login1(props) {
   const [email, setEmail] = useState('')
@@ -9,6 +10,7 @@ function Login1(props) {
   const [pass, setPass] = useState('')
   const [passV, setPassV] = useState('')
   const [mess, setMessage] = useState('')
+ 
   const add = (e) => {
     e.preventDefault()
   Axios.post('/log',  {
@@ -20,7 +22,7 @@ function Login1(props) {
 
   return (
    <>
-    <div className="listing-con">
+   <div className="listing-con">
     <div className="landing-img">
         <div className="grad-img"></div>
         <div className="landing-text"> <h1>text</h1> </div>
@@ -32,7 +34,7 @@ function Login1(props) {
       <div className="form">
       <h1 className="mess-con">{mess}</h1>
         <form>
-        <label>email*</label>
+             <label>email*</label>
              <input name="email" type="text" placeholder="email" className="text-in" onChange={(e) => setEmail(e.target.value)} />
              <label>username*</label>
              <input name="user" type="text" placeholder="username" className="text-in" onChange={(e) => setUser(e.target.value)} />

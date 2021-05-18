@@ -4,6 +4,13 @@ import {Link} from "react-router-dom"
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 function More(props) {
+
+  const [mouse1, setMouse1] = useState(false)
+  const [mouse2, setMouse2] = useState(false)
+  const [mouse3, setMouse3] = useState(false)
+  const [menu, setMenu] = useState(false)
+
+
   const [buy, setBuy] = useState('')
   const [prop, setProp] = useState('')
 
@@ -43,6 +50,16 @@ function More(props) {
          .then(res => console.log(res.data))
          
       }
+
+      const mou1 = () => {
+        setMouse1(!mouse1)
+    }
+    const mou2 = () => {
+      setMouse2(!mouse2)
+  }
+  const mou3 = () => {
+    setMouse3(!mouse3)
+}
   return (
    <>
    <Nav />
@@ -95,22 +112,38 @@ function More(props) {
           </div>
          </div>
        </div>
-
+ </div>
        <div className="int">
-          <div className="des">
+  {/*-------------------------------------------------------------------------------------*/}       
+          <div className="details">
+         
+           <h1>Details</h1>
+           <div className="underline"></div>
+ {/*-------------------------------------------------------------------------------------*/}       
+
+       
+ {/*-------------------------------------------------------------------------------------*/}       
+           <div className="inti">
+               <h1>full description</h1>
+               <h1 onClick={mou1}>close</h1>
+          </div>
+          <div className="underline"></div>
+             <div className={`des ${mouse1 ? "drop-hide" : "drop-show"}`}>
 
             <p>{des}</p>
           </div>
-          <div className="details">
-           <h1>Details</h1>
-           <div className="underline"></div>
-           <div className="detail-con">
-           <div className="inti">
+ {/*-------------------------------------------------------------------------------------*/}             
+          
+
+
+
+          <div className="inti">
                <h1>interior</h1>
-               
-             </div>
-            
-             <div className="bath-con">
+               <h1 onClick={mou2}>close</h1>
+          </div>
+          <div className="underline"></div>
+          <div className={` gr ${mouse2 ? "drop-hide" : "drop-show"}`}>
+             <div className={`bath-con `}>
              {full > 0 ?           
              <div className="full-bath-more">
                <h1>{full}</h1>
@@ -135,25 +168,45 @@ function More(props) {
                <h1>finished</h1>
              </div>
              </div>
-           </div>
-           <div className="underline"></div>
+          </div>
+  {/*-------------------------------------------------------------------------------------*/}                 
+
+
+
            <div className="inti">
                <h1>sell</h1>
+               <h1 onClick={mou3}>close</h1>
           </div>
-          <div className="sell-con">
+          <div className="underline"></div>
+          <div className={`sell-con ${mouse3 ? "drop-hide" : "drop-sell"}`}>
             <h1>{buy}</h1>
             <h1>{prop}</h1>
           </div>
+ {/*-------------------------------------------------------------------------------------*/}       
+          </div>
+          <div className="contact-form">
+            <h1>Book a showing</h1>
+            <form>
+              <label>name</label>
+              <input type="text" />
+              <label>email</label>
+              <input type="text" />
+              <label>phone</label>
+              <input type="text" />
+              <div className="btn-con">
+                <button>send</button>
+              </div>
+            </form>
           </div>
         </div>
-      </div>
+       </div>
       <div className="btn">
         <div className="btn-con">
               <Link to="/"><button onClick={Del}>delete</button></Link>
               <Link to={`/comp/edit/${props.match.params.id}`}><button>edit</button></Link>
             </div> 
         </div>
-    </div>
+
    
    </>
   );

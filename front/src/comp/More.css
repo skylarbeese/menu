@@ -4,12 +4,13 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+
 }
 h1{
     font-size: 1.2rem;
 }
 .img-con {
-    width: 80%;
+    width: 100%;
     height: 70vh;
     background-color: blue;
 }
@@ -80,22 +81,31 @@ h1{
 }
 
 .int {
-    justify-content: space-around;
-    margin: 2rem;
+    justify-content: space-between;
+    align-items: center;
     display: flex;
+  
+    background-color: rgb(35, 44, 44);
     width: 100%;
+   
 }
+
 .des {
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 40%;
+    width: 90%;
    
 }
 .details {
     background-color: cadetblue;
-    width: 50%;
+    width: 70%;
     padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  
 }
 .detail-con {
     justify-content: space-around;
@@ -112,6 +122,37 @@ h1{
     display: flex;
     width: 100%;
     margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.contact-form {
+  
+    width: 30%;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  
+    flex-direction: column;
+}
+.contact-form form {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.contact-form form input{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    font-size: 1rem;
+    padding: .4rem;
+    border-radius: 5px;
+}
+.contact-form form label{
+    margin: 1rem;
 }
 .bed-con {
     justify-content: space-around;
@@ -121,27 +162,31 @@ h1{
     margin-bottom: 2rem;
 }
 .full-bath-more {
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     display: flex;
+    width: 20%;
 }
 .bed-more {
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     display: flex;
+    width: 20%;
 }
 .half-bath-more {
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     display: flex;
+    width: 20%;
 }
 .base-more h1 {
     margin-right: .3rem;
 }
 .base-more {
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     display: flex;
+    width: 20%;
 }
 .sell-con {
     justify-content: space-around;
@@ -153,12 +198,31 @@ h1{
     font-size: 1rem;
     color: rgb(0, 0, 0, 0.8);
     margin-bottom: 1rem;
+    margin-top: 2rem;
+    
+}
+.gr {
+    width: 100%;
+}
+/*----------------------------------------------------------*/
+.inti {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 90%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.btn-con {
+    float: left;
+    margin-top: 1rem;
 }
 .btn {
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 100%
+    width: 100%;
+    margin: 2rem;
 }
 .btn-con {
   
@@ -176,15 +240,50 @@ button {
     border: none;
     background-color: coral;
 }
+
+
+.drop-hide{
+  
+    display: none;
+    
+  }
+   .drop-show{
+    
+    display: flex;
+ 
+   
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+.drop-sell {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+}
+
 @media screen and (min-width: 0px) and (max-width:1000px) {
     .int {
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         display: flex;
         flex-direction: column;
-        margin: 2rem;
+       
+        background-color: transparent;
+        width: 100%;
+    }
+    .contact-form {
         
         width: 100%;
+    
+
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background-color: tomato;
+        flex-direction: column;
     }
     .des {
         justify-content: center;
@@ -192,13 +291,18 @@ button {
         display: flex;
         width: 80%;
        background-color: transparent;
-       margin-bottom: 2rem;
+      
     }
     .details {
         background-color: cadetblue;
-        width: 80%;
-        padding: 1rem;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+       
+        flex-direction: column;
     }
+  
     .re {
     
         display: flex;
@@ -227,7 +331,7 @@ button {
         align-items: center;
         display: flex;
         flex-direction: column;
-        margin: 2rem;
+       
         
         width: 100%;
     }
@@ -237,11 +341,11 @@ button {
         display: flex;
         width: 80%;
        background-color: transparent;
-       margin-bottom: 2rem;
+      
     }
     .details {
         background-color: cadetblue;
-        width: 80%;
+        width: 100%;
         padding: 1rem;
     }
     .price h1{
@@ -279,6 +383,33 @@ button {
     .city-zip-sta .zip h1{
         font-size: 1rem;
     }
+    .full-bath-more {
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        width: 40%;
+    }
+    .bed-more {
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        width: 40%;
+    }
+    .half-bath-more {
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        width: 40%;
+    }
+    .base-more h1 {
+        margin-right: .3rem;
+    }
+    .base-more {
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        width: 40%;
+    }
 }
 
 @media screen and (min-width: 0px) and (max-width:550px) {
@@ -310,7 +441,7 @@ button {
     }
     .details {
         background-color: cadetblue;
-        width: 80%;
+        width: 96%;
         padding: 1rem;
     }
     .price h1{

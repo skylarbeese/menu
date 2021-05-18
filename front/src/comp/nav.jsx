@@ -111,7 +111,7 @@ function Nav() {
        </div>
        <div className="dropdown">
        
-         <Link to="" onClick={mou2}>Create a listing</Link>
+         <Link onClick={mou2}>Create a listing</Link>
 
          <div className={`dropdown-content ${mouse2 ? 'drop-show' : 'drop-hide'}`}>
          <Link to="/comp/about" >About</Link>
@@ -122,7 +122,7 @@ function Nav() {
       </div>
       <div className="dropdown">
        
-         <Link to="" onClick={mou3}>Create an accout</Link>
+         <Link onClick={mou3}>Create an accout</Link>
 
        <div className={`dropdown-content ${mouse3 ? 'drop-show' : 'drop-hide'}`}>
          <Link to="/comp/login" >create an account</Link>

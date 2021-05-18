@@ -2,8 +2,9 @@ const express = require('express')
 const mongoose = require('mongoose')
 const Form = require('./models/form')
 const Login = require('./models/login')
+const auth = require('./mid/auth')
 const cors = require('cors')
-
+const jwt = require('jsonwebtoken')
 const app = express()
 app.use(express.json())
 
@@ -33,7 +34,7 @@ app.post('/inst',  async (req, res) => {
         buy, prop, des, full, half, bed, sq, price,
         adr, city, state, zip
    })
-   
+  
    const newList = form.save()
    if(newList) {
      res.json('your listing has been posted!')
@@ -63,7 +64,7 @@ app.post('/inst',  async (req, res) => {
       res.send(result)
     })
   })
-  app.delete('/inst/del/:id', async (req, res) => {
+  app.delete('/inst/del/:id',  async (req, res) => {
     const id = req.params.id
     Form.findByIdAndDelete(id, (err, result) => {
       if(err) {
@@ -151,12 +152,15 @@ app.post('/inst',  async (req, res) => {
         res.json('wrong pass')
       
       } else {
-       const newAcc = log.save()
-      if(newAcc) {
-       res.json('your account has been made')
-      } else {
-       res.json('error, your account has not be made') 
-   }
+        const token = jwt.sign({id: userEx._id}, proccess.env.JWT_SECRET)
+        res.json({
+          token,
+          user: {
+            id: userEx._id
+            
+          },
+        })
+   
   } 
 }
 
@@ -165,5 +169,32 @@ app.post('/inst',  async (req, res) => {
     }
   
   })
+  app.delete('/inst/del', auth, async (req, res) => {
+    try{
+        Login.findByIdAndDelete(req.user)
+    }   catch(err) {
   
+    }
+  })
+  app.post('/inst/ls', async (req, res) => {
+    try{
+      const token = req.header("x-auth-token")
+      if(!token) return res.json(false)
+
+      const ver = jwt.verity(token, proccess.env.JWT_SECRET)
+      if(!ver) return res.json(false)
+
+      const user = await Login.findById(ver.id)
+      if(!user) return res.json(false)
+
+    return res.json(true)
+
+  }   catch(err) {
+
+  }
+  })
+  app.get('/inst', async (req, res) => {
+    const user = Login.findById(req.user)
+    res.json(user)
+  })
 app.listen(3001)

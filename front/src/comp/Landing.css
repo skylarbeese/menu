@@ -39,8 +39,10 @@
     display: flex;
     flex-direction: column;
     color: rgb(255, 255, 255);
-    
-    
+   
+}
+.landing-text h1 {
+    font-size: 3rem;
 }
 .info-cont {
     width: 100vw;
@@ -115,9 +117,7 @@
     background-color: thistle;
     
 }
-.info-box-con {
 
-  }
 .info-box-con {
   width: 80%;
   height: 50vh;
@@ -127,9 +127,7 @@
     flex-direction: column;
    border: 1px solid rgba(175, 175, 175);
 } 
-.info-con-c {
-    
-}
+
 .text-info {
    
     position: absolute;
@@ -151,10 +149,19 @@
     overflow: hidden;
     
 }
-.text-info p {
-    font-size: 1rem;
+
+.text-info h1 a{
+   
+    text-decoration: none;
+    color: black;
   
 }
+.text-info p {
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+  
+} 
 .underline {
     margin-bottom: .8rem;
     margin-top: .5rem;
@@ -193,7 +200,7 @@
         width: 20rem;
         display: flex;
         flex-direction: column;
-    }
+    } 
     .info-box-con {
         margin: 2rem;
         width: 100%;
@@ -209,5 +216,5 @@
         width: 13rem;
         display: flex;
         flex-direction: column;
-    }
+    } 
 }
