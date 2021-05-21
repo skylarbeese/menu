@@ -11,7 +11,7 @@ const FormSchema = new mongoose.Schema({
   },
   des: {
     type: String,
-    required: true
+    required: false
 },
 adr: {
   type: String,
@@ -46,6 +46,22 @@ sq: {
   required: true
 },
 price: {
+  type: Number,
+  required: true
+},
+base: {
+  type: String,
+  required: true
+},
+loft: {
+  type: String,
+  required: true
+},
+park: {
+  type: String,
+  required: true
+},
+garS: {
   type: Number,
   required: true
 }

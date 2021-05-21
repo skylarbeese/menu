@@ -1,4 +1,5 @@
 import './Landing.css';
+import './AllListings.css';
 import {Link} from "react-router-dom"
 function Landing({titleArray}) {
  // const le = titleArray.length
@@ -276,7 +277,7 @@ const titleBuy = titleArray.filter(buy => {
      <div className="info-box-con">
      <div className="image-box"></div>
        <div className="text-info">
-         <h1><Link to={{pathname: `/comp/more/${title[1]._id}`}}>{titleBuy[1].buy}</Link></h1>
+         <h1><Link to={{pathname: `/comp/more/${titleBuy[1]._id}`}}>{titleBuy[1].buy}</Link></h1>
          <div className="underline"></div>
          <div className="para-text">
          <p>

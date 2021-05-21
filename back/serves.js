@@ -30,9 +30,13 @@ app.post('/inst',  async (req, res) => {
       const city = req.body.city;
       const state = req.body.state;
       const zip = req.body.zip;
+      const base = req.body.base;
+      const loft = req.body.loft;
+      const park = req.body.park;
+      const garS = req.body.garS;
       const form = new Form({
         buy, prop, des, full, half, bed, sq, price,
-        adr, city, state, zip
+        adr, city, state, zip, loft, base, park, garS
    })
   
    const newList = form.save()
@@ -86,11 +90,14 @@ app.post('/inst',  async (req, res) => {
       blog.bed = req.body.bed;
       blog.sq = req.body.sq;
       blog.price = req.body.price;
-
+      blog.base = req.body.base;
+      blog.loft = req.body.loft;
       blog.adr = req.body.adr;
       blog.city = req.body.city;
       blog.state = req.body.state;
       blog.zip = req.body.zip;
+      blog.park = req.body.park;
+      blog.garS = req.body.garS;
     
        blog.save()
        

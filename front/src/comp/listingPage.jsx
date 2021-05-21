@@ -9,6 +9,11 @@ function ListingPage(props) {
   const [city, setCity] = useState('')
   const [state, setState] = useState('')
   const [zip, setZip] = useState('')
+  const [base, setBase] = useState('')
+  const [loft, setLoft] = useState('')
+  const [park, setPark] = useState('')
+  
+  const [garS, setGarS] = useState(0)
   const [price, setPrice] = useState(0)
   const [full, setFull] = useState(0)
   const [half, setHalf] = useState(0)
@@ -20,7 +25,9 @@ function ListingPage(props) {
   Axios.post('/',  {
     buy: buy, prop: prop, des: des, full: full,
     half: half, bed: bed, sq: sq, price: price,
-    adr: adr, city: city, state: state, zip: zip
+    adr: adr, city: city, state: state, zip: zip, base: base, 
+    loft: loft, park: park,  garS: garS
+
   })
   .then(res => setMessage(res.data))
 }
@@ -47,11 +54,33 @@ function ListingPage(props) {
           <ladel>Property type</ladel>
 
           <div className="radio-btn">
-          <div className="radio"><input type="radio" name="" value="House" className="House" onChange={(e) => setProp(e.target.value)}/> House </div>
-          <div className="radio"><input type="radio" name="" value="Town House" className="Town House" onChange={(e) => setProp(e.target.value)}/> Town House </div>
-          <div className="radio"><input type="radio" name="" value="Apertment" className="Apartment" onChange={(e) => setProp(e.target.value)}/> Apartment </div>
+          <div className="radio"><input type="radio" name="house" value="House" className="House" onChange={(e) => setProp(e.target.value)}/> House </div>
+          <div className="radio"><input type="radio" name="house" value="Town House" className="Town House" onChange={(e) => setProp(e.target.value)}/> Town House </div>
+          <div className="radio"><input type="radio" name="house" value="Apertment" className="Apartment" onChange={(e) => setProp(e.target.value)}/> Apartment </div>
+          </div>
+          <ladel>basement</ladel>
+          <div className="radio-btn">
+          <div className="radio"><input type="radio" name="base" value="finished" className="House" onChange={(e) => setBase(e.target.value)}/> finished basement </div>
+          <div className="radio"><input type="radio" name="base" value="unfinished" className="Town House" onChange={(e) => setBase(e.target.value)}/> unfinished basement </div>
+          
           </div>
 
+          <ladel>loft/attic</ladel>
+          <div className="radio-btn">
+          <div className="radio"><input type="radio" name="loft" value="yes" className="House" onChange={(e) => setLoft(e.target.value)}/> yes </div>
+          <div className="radio"><input type="radio" name="loft" value="no" className="Town House" onChange={(e) => setLoft(e.target.value)}/> no </div>
+          
+          </div>
+
+          <ladel>parking</ladel>
+          <div className="radio-btn">
+          <div className="radio"><input type="radio" name="park" value="Garage" className="House" onChange={(e) => setPark(e.target.value)}/> Garage </div>
+          <div className="radio"><input type="radio" name="park" value="Parking lot" className="Town House" onChange={(e) => setPark(e.target.value)}/> Parking lot </div>
+          
+          </div>
+          
+          <label>Garage space*</label>
+             <input name="bathrooms" type="number" placeholder="price" className="text-in" onChange={(e) => setGarS(e.target.value)} required/>
           <label>Price*</label>
              <input name="bathrooms" type="text" placeholder="price" className="text-in" onChange={(e) => setPrice(e.target.value)} required/>
            <label>Full Bathrooms*</label>
