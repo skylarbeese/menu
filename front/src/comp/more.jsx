@@ -292,7 +292,7 @@ const mou4 = () => {
         </div>
        </div>
        
-      <div className="btn">
+    <div className="btn">
         <div className="btn-con">
               <Link to="/"><button onClick={Del}>delete</button></Link>
               <Link to={`/comp/edit/${props.match.params.id}`}><button>edit</button></Link>

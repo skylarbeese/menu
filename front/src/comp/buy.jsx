@@ -8,7 +8,7 @@ function Rent({titleArray}) {
   const [search, setSearch] = useState([])
   const [searchResult, setSearchResult] = useState([])
   const title = search.filter(buy => {
-    return buy.buy === 'Buy'
+    return buy.buy === 'Sell'
   })
   React.useEffect(() => {  
     

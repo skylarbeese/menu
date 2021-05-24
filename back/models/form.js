@@ -64,6 +64,18 @@ park: {
 garS: {
   type: Number,
   required: true
+},
+lot: {
+  type: Number,
+  required: true
+},
+sqm: {
+  type: String,
+  required: true
+},
+year: {
+  type: Number,
+  required: true
 }
 })
 

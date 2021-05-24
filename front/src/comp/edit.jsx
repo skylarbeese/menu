@@ -12,8 +12,10 @@ function Edit(props) {
   const [base, setBase] = useState('')
   const [loft, setLoft] = useState('')
   const [park, setPark] = useState('')
-  const [gar, setGar] = useState('')
+  const [sqm, setSqM] = useState('')
   const [garS, setGarS] = useState(0)
+  const [year, setYear] = useState(0)
+  const [lot, setLot] = useState(0)
   const [price, setPrice] = useState(0)
   const [full, setFull] = useState(0)
   const [half, setHalf] = useState(0)
@@ -28,7 +30,9 @@ function Edit(props) {
        setHalf(res.data.half),
        setBed(res.data.bed),
        setSq(res.data.sq),
+       setSqM(res.data.sqm),
        setPrice(res.data.price),
+       setLot(res.data.lot),
        setAdr(res.data.adr),
        setCity(res.data.city),
        setState(res.data.state),
@@ -36,7 +40,7 @@ function Edit(props) {
        setDes(res.data.des),
        setBase(res.data.base),
        setLoft(res.data.loft),
-      
+       setYear(res.data.year),
        setPark(res.data.park),
        setGarS(res.data.garS)
    ])
@@ -51,7 +55,8 @@ function Edit(props) {
     buy: buy, prop: prop, des: des, full: full,
     half: half, bed: bed, sq: sq, price: price,
     adr: adr, city: city, state: state, zip: zip,
-    base: base, loft: loft, garS: garS
+    base: base, loft: loft, garS: garS, park: park,
+    lot: lot, sqm: sqm, year: year
 
   })
   .then(res => setMessage(res.data))
@@ -74,7 +79,7 @@ function Edit(props) {
           
           <div className="radio-btn">
           <div className="radio"><input type="radio" name="prop-buy" value="Rent" className="" onChange={(e) => setBuy(e.target.value)} /> Renting</div>
-          <div className="radio"><input type="radio" name="prop-buy" value="Buy" className="" onChange={(e) => setBuy(e.target.value)}/> Saling </div>
+          <div className="radio"><input type="radio" name="prop-buy" value="Selling" className="" onChange={(e) => setBuy(e.target.value)}/> Saling </div>
           </div>
           <ladel>Property type</ladel>
 

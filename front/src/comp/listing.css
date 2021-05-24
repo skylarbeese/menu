@@ -45,53 +45,104 @@
        
        
    }
-.form {
-    width: 80%;
+   .form {
+       width: 100%;
+       justify-content: center;
+       align-items: center;
+       display: flex;
+       flex-direction: column;
+   }
+  .form form {
+    width: 90%;
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-}
-
-.mess-con {
-  
-    font-size: 1.3rem;
-    color: rgb(3, 44, 10);
-}
-.form form {
+   
+   }
+   .gen {
+    
     width: 100%;
+   
+   }
+   .gen h1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    background-color: rgb(233, 233, 233);
+    margin-top: 1rem;
+   }
+   .gen-info {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
+    background-color: rgb(247, 247, 247);
+   }
+   .in {
+    
+    display: flex;
+   }
+   
+   label {
+       padding-bottom: 1rem;
+       padding-top: 1rem;
+   }
+   .in-con-c input {
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid rgb(199, 198, 198);
+    padding: .3rem;
+   }
+  .in-con input {
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid rgb(199, 198, 198);
+      padding: .3rem;
+      
+  }
+   select {
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid rgb(199, 198, 198);
+    padding: .3rem;
     
 }
-.radio-btn {
-    width: 40%;
+  textarea {
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid rgb(199, 198, 198);
+    padding: .3rem;
+    
+}
+.prop-rent {
+    width: 90%;
+    display: flex;
     justify-content: space-around;
     align-items: center;
-    display: flex;
-    padding-top: 1.4rem;
-    padding-bottom: 1.4rem;
 }
-
-textarea {
-    font-size: 16px;
-    font-size: max(16px, 1em);
-    width: 70%;
-    padding: 0.25em 0.5em;
-    background-color: transparent;
-    
-    border-radius: 4px;
-    margin: 1rem;
-  }
- .text-in {
-    font-size: 16px;
-    font-size: max(16px, 1em);
-    width: 70%;
-    padding: 0.25em 0.5em;
-    background-color: transparent;
-    
-    border-radius: 4px;
-    margin: 1rem;
- }
+.in-con {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.in-con-c {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.pri {
+    width: 90%;
+}
+.a {
+    display: flex;
+    width: 100%;
+}
+.sq {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

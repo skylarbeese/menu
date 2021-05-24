@@ -34,9 +34,13 @@ app.post('/inst',  async (req, res) => {
       const loft = req.body.loft;
       const park = req.body.park;
       const garS = req.body.garS;
+      const lot = req.body.lot;
+      const sqm = req.body.sqm;
+      const year = req.body.year;
       const form = new Form({
         buy, prop, des, full, half, bed, sq, price,
-        adr, city, state, zip, loft, base, park, garS
+        adr, city, state, zip, loft, base, park, garS, 
+        lot, sqm, year
    })
   
    const newList = form.save()
@@ -98,7 +102,9 @@ app.post('/inst',  async (req, res) => {
       blog.zip = req.body.zip;
       blog.park = req.body.park;
       blog.garS = req.body.garS;
-    
+      blog.lot = req.body.lot;
+      blog.sqm = req.body.sqm;
+      blog.year = req.body.year;
        blog.save()
        
        .then(() => res.json('your post has been UPDATED'))
