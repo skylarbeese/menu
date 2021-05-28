@@ -77,7 +77,7 @@ year: {
   type: Number,
   required: true
 }
-})
+}, { timestamps: true })
 
 const Form = mongoose.model('Form', FormSchema)
 module.exports = Form

@@ -143,12 +143,12 @@ const mou4 = () => {
                <h1 onClick={mou1}>close</h1>
           </div>
           <div className="underline"></div>
-          { des === null ?  <div className={`gr ${mouse1 ? "drop-hide" : "drop-show-more"}`}>
-
-            <p>{des}</p>
+          {des === "" ?  <div className={`gr ${mouse1 ? "drop-hide" : "drop-show-more"}`}>
+          <p>no description </p>
+            
           </div> : <div className={`gr ${mouse1 ? "drop-hide" : "drop-show-more"}`}>
+          <p>{des}</p>
 
-<p>no description </p>
 </div>}
  {/*-------------------------------------------------------------------------------------*/}             
           
@@ -177,7 +177,8 @@ const mou4 = () => {
                <h1>{half}</h1>
                
              </div>
-
+             </>
+: null}
              <div className="base-more more-t">
                <h1 className="basement-text tx">bathrooms total: </h1>
                <h1>{full + half}</h1>
@@ -185,8 +186,8 @@ const mou4 = () => {
              </div>
 
             
-             </>
-: null}
+             
+
 
 
             <div className="full-bath-more more-t">

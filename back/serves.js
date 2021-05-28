@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const multer = require('multer')
 const Form = require('./models/form')
 const Login = require('./models/login')
 const auth = require('./mid/auth')
@@ -9,6 +10,13 @@ const app = express()
 app.use(express.json())
 
 app.use(cors())
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'img')
+  }
+})
+
+const upload = multer({storage: storage})
 
 mongoose.connect("mongodb+srv://skylar:12@cluster0.0kkpf.mongodb.net/lists2?retryWrites=true&w=majority", 
 { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}

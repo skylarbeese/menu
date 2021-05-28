@@ -5,17 +5,17 @@ function ListingPage(props) {
   
 
 
-  const [buy, setBuy] = useState('')
-  const [prop, setProp] = useState('')
+  const [buy, setBuy] = useState([])
+  const [prop, setProp] = useState([])
   const [des, setDes] = useState('')
   const [adr, setAdr] = useState('')
   const [city, setCity] = useState('')
   const [state, setState] = useState('')
   const [zip, setZip] = useState('')
-  const [base, setBase] = useState('')
-  const [loft, setLoft] = useState('')
-  const [park, setPark] = useState('')
-  const [sqm, setSqM] = useState('')
+  const [base, setBase] = useState([])
+  const [loft, setLoft] = useState([])
+  const [park, setPark] = useState([])
+  const [sqm, setSqM] = useState([])
   const [year, setYear] = useState(0)
   const [lot, setLot] = useState(0)
   const [garS, setGarS] = useState(0)
@@ -51,23 +51,25 @@ function ListingPage(props) {
          <h1 className="mess-con">{message}</h1>
         <form>
           <div className="gen">
+            <div className="sect">
             <h1>General info</h1>
             <div className="gen-info">
 
             <div className="prop-rent">
               <div className="in-con pr">
                <label>Property type</label>
-            { /*  <select name="prop"  onChange={(e) => setProp(e.target.value)} single>
+              <select name="prop"  onChange={(e) => setProp(e.target.value)} single>
+              <option >-- choose an option --</option>
                   <option value="House" >House</option>
                   <option value="Town home" >Town home</option>
                   <option value="Apartment ">Apartment </option>
-               </select> */}
-               <input name="prop" value="House" type="radio" placeholder="Sqft"
+               </select> 
+           {/*    <input name="prop" value="House" type="radio" placeholder="Sqft"
                 className="text-in" onChange={(e) => setProp(e.target.value)} required/> House
                <input name="prop" value="Town home" type="radio" placeholder="Sqft"
                 className="text-in" onChange={(e) => setProp(e.target.value)} required/> Town home
                <input name="prop" value="Apartment" type="radio" placeholder="Sqft"
-                className="text-in" onChange={(e) => setProp(e.target.value)} required/> Apartment
+                className="text-in" onChange={(e) => setProp(e.target.value)} required/> Apartment */}
              {/*  <input name="bathrooms" type="number" placeholder="Sqft"
                 className="text-in" onChange={(e) => setProp(e.target.value)} required/> */}
               </div>
@@ -75,14 +77,15 @@ function ListingPage(props) {
               
               <div className="in-con ren">
               <label>Rent/Own</label>
-            {/*  <select name="buy"  onChange={(e) => setBuy(e.target.value)} single>
+              <select name="buy" value={buy} onChange={(e) => setBuy(e.target.value)} single>
+              <option >-- choose an option --</option>
                   <option value="Sell" >Sell</option>
                   <option value="Rent" >Rent</option>
-              </select> */}
-              <input name="buy" type="radio" placeholder="Sqft"
+              </select> 
+           { /*  <input name="buy" type="radio" placeholder="Sqft"
                 className="text-in" value="Sell" onChange={(e) => setBuy(e.target.value)} required/> Sell
                 <input name="buy" type="radio" placeholder="Sqft"
-                className="text-in" value="Rent" onChange={(e) => setBuy(e.target.value)} required/> Rent
+                className="text-in" value="Rent" onChange={(e) => setBuy(e.target.value)} required/> Rent */}
              {/*  <input name="bathrooms" type="text" placeholder="Sqft"
                 className="text-in" onChange={(e) => setBuy(e.target.value)} required/> */}
               </div>
@@ -97,10 +100,15 @@ function ListingPage(props) {
                 className="text-in" onChange={(e) => setSq(e.target.value)} required/>
               </div>
               <div className="a">
-           { /*  <select name="sqft"  onChange={(e) => setSqM(e.target.value)} single>
+             <select name="sqft"  onChange={(e) => setSqM(e.target.value)} single>
+             <option >-- choose an option --</option>
                   <option value="sqm" >sqm</option>
                   <option value="sqft" >sqft</option>
-              </select> */}
+              </select> 
+            {/*  <input name="sqm" type="radio" placeholder="Sqft"
+                className="text-in" value="sqm" onChange={(e) => setSqM(e.target.value)} required/> sqm
+                 <input name="sqm" type="radio" placeholder="Sqft"
+                className="text-in" value="sqft" onChange={(e) => setSqM(e.target.value)} required/> sqft */} 
               {/*  <input name="bathrooms" type="text" placeholder="Sqft"
                 className="text-in" onChange={(e) => setSqM(e.target.value)} required/> */}
              </div>
@@ -136,13 +144,15 @@ function ListingPage(props) {
                 </div>
             </div>
             </div>
+            </div>
+            <div className="sect">
             <h1>Location</h1>
             <div className="gen-info">
             <div className="in-con-c">
             <label>City*</label>
              <input name="bathrooms" type="text" placeholder="City" className="text-in" onChange={(e) => setCity(e.target.value)} required/>
             </div>
-            <div className="prop-rent">
+            <div className="prop-rent rooms">
             <div className="in-con">
             <label>Zip Code*</label>
              <input name="bathrooms" type="text" placeholder="Zip code" className="text-in" onChange={(e) => setZip(e.target.value)} required/>
@@ -157,22 +167,24 @@ function ListingPage(props) {
             </div>
             </div>
             </div>
+            </div>
+            <div className="sect">
             <h1>space</h1>
             <div className="gen-info">
-            <div className="prop-rent">
-            <div className="in-con">
+            <div className="prop-rent rooms">
+            <div className="in-con ce">
                <label>Full Bathrooms*</label>
                  <input name="bathrooms" type="number" placeholder="Full Bathrooms" className="text-in"
                  onChange={(e) => setFull(e.target.value)} required/>
             </div>
-            <div className="in-con">
+            <div className="in-con ce">
             <label>Half Bathrooms*</label>
                <input name="bathrooms" type="number" placeholder="Half Bathrooms" className="text-in" 
                onChange={(e) => setHalf(e.target.value)} required/>
             </div>
            
             
-              <div className="in-con">
+              <div className="in-con ce">
               <label>Bedrooms*</label>
                    <input name="bathrooms" type="number" placeholder="Bedrooms" className="text-in" 
                    onChange={(e) => setBed(e.target.value)} required/>
@@ -182,19 +194,29 @@ function ListingPage(props) {
                <div className="in-con">
                  <label>basement</label>
                 <select name="buy"  onChange={(e) => setBase(e.target.value)} single>
+                <option >-- choose an option --</option>
                    <option value="finished" >finished</option>
                    <option value="unfinished" >unfinished</option>
                  </select> 
+              {/*   <input name="base" type="radio" placeholder="finished"
+                className="text-in" value="finished" onChange={(e) => setBase(e.target.value)} required/> finished
+                 <input name="base" value="unfinished" type="radio" placeholder="unfinished"
+                className="text-in" onChange={(e) => setBase(e.target.value)} required/> unfinished */}
                   {/*<input name="bathrooms" type="text" placeholder="Sqft"
                 className="text-in" onChange={(e) => setBase(e.target.value)} required/> */}
                </div>
 
                <div className="in-con">
                <label>loft/attic</label>
-                 <select name="buy"  onChange={(e) => setLoft(e.target.value)} single>
+              <select name="buy"  onChange={(e) => setLoft(e.target.value)} single>
+              <option >-- choose an option --</option>
                    <option value="yes" >yes</option>
                    <option value="no" >no</option>
-                 </select> 
+              </select> 
+                { /*  <input name="loft" type="radio" placeholder="Sqft"
+                    className="text-in" value="yes" onChange={(e) => setLoft(e.target.value)} required/> yes
+                     <input name="loft" type="radio" placeholder="Sqft"
+                    className="text-in" value="no" onChange={(e) => setLoft(e.target.value)} required/> no */}
                   {/* <input name="bathrooms" type="text" placeholder="Sqft"
                     className="text-in" onChange={(e) => setLoft(e.target.value)} required/> */}
                </div>
@@ -202,10 +224,15 @@ function ListingPage(props) {
               <div className="prop-rent">
                <div className="in-con">
                <label>parking</label>
-                 <select name="buy"  onChange={(e) => setPark(e.target.value)} single>
-                   <option value="Parking lot" >yes</option>
-                   <option value="Garage" >no</option>
+                <select name="buy"  onChange={(e) => setPark(e.target.value)} single>
+                   <option >-- choose an option --</option>
+                   <option value="Parking lot" >Parking lot</option>
+                   <option value="Garage" >Garage</option>
                  </select> 
+               { /*   <input name="park" type="radio" placeholder="Sqft"
+                  className="text-in" value="Parking lot" onChange={(e) => setPark(e.target.value)} required/> Parking lot
+                    <input name="park" type="radio" placeholder="Sqft"
+                  className="text-in" value="Garage" onChange={(e) => setPark(e.target.value)} required/> Garage */}
                   {/* <input name="bathrooms" type="text" placeholder="Sqft"
                   className="text-in" onChange={(e) => setPark(e.target.value)} required/> */}
                </div>
@@ -218,8 +245,9 @@ function ListingPage(props) {
 
             </div>
             </div>
+            </div>
           </div>
-       {/*  
+      
          
           
      
@@ -231,8 +259,10 @@ function ListingPage(props) {
         
           
            
-*/}
-          <button className="btn" onClick={add}>submit</button>
+
+          <div className="bt">
+          <button className="btn-sub" onClick={add}>submit</button>
+          </div>
        </form>
         </div>
        

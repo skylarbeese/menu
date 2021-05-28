@@ -4,6 +4,7 @@
 }
 .text-link {
     padding: 2rem;
+    width: 95%;
 }
 .text-link a{
     text-decoration: none;
@@ -12,6 +13,9 @@
 .landing-con {
  width: 100vw;
 
+}
+.info-con-c  {
+    box-shadow: rgb(192, 192, 192) 1px 2px 7px;
 }
 .landing-img {
  width: 100%;
@@ -40,6 +44,7 @@
 .con-a a {
     text-decoration: none;
     color: black;
+   
 }
 .landing-text{
     position: absolute;
@@ -74,7 +79,7 @@
 }
 .image-box {
     width: 100%;
-    height: 15rem;
+    height: 12rem;
     background-color: blueviolet;
     position: relative;
 }
@@ -88,7 +93,7 @@
 /*-------------------------------------------------------------------------*/
 .tit-in h1{
  font-size: 1rem;
- padding-left: 2rem;
+ padding-left: 1rem;
  color: white;
 }
 .tit-in h1.li-price {
@@ -99,7 +104,7 @@
 /*-------------------------------------------------------------------------*/
 .para-text {
     width: 90%;
-    padding-top: 2rem;
+    padding-top: 1rem;
     justify-content: space-around;
     align-items: center;
     display: flex;
@@ -109,8 +114,8 @@
     
 }
 .city-text {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     width: 90%;
     display: flex;
     flex-direction: column;
