@@ -13,12 +13,17 @@ const titleBuy = titleArray.filter(buy => {
    <div className="landing-con">
       <div className="landing-img">
         <div className="grad-img"></div>
-        <div className="landing-text"> <h1>Se</h1> </div>
+        <div className="landing-text"> <h1>Se</h1> 
+        <div className="underlinee"></div>
+        <p> Bacon ipsum dolor amet ham hock brisket ham tri-tip cupim. 
+           Tri-tip strip steak pork belly prosciutto, filet mignon tongue ham 
+           hock beef ribs ball tip. </p>
+        </div>
         <div className="banner-img"></div>
         
 
       </div>
-      <div className="info-cont">
+      {/*<div className="info-cont">
       <div className="info-head">
         <h1>header</h1>
         <div className="underline"></div>
@@ -32,8 +37,8 @@ const titleBuy = titleArray.filter(buy => {
            loin swine, salami pork chop spare ribs rump tri-tip landjaeger 
            buffalo cow alcatra andouille picanha.
            </p>
-       </div>
-      </div>
+  </div> 
+  </div> */}
     <div className="info">
     <div className="text-link"><Link to="./comp/allListings"><h1>see all listings</h1></Link></div>
     {/*------------------------------------------------------------------------------------------------*/}
@@ -60,9 +65,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{titleArray[0].state}</h1>
              <h1>{titleArray[0].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{titleArray[0].adr}</h1>
-             
+             <h1 className="date-t">{new Date(titleArray[0].createdAt).toLocaleDateString()}</h1>
            </div>
           </div>
          </div>
@@ -91,9 +96,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{titleArray[1].state}</h1>
              <h1>{titleArray[1].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{titleArray[1].adr}</h1>
-            
+             <h1 className="date-t">{new Date(titleArray[1].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
          </div>
@@ -121,9 +126,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{titleArray[2].state}</h1>
              <h1>{titleArray[2].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{titleArray[2].adr}</h1>
-           
+             <h1 className="date-t">{new Date(titleArray[2].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
          
@@ -155,9 +160,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{titleArray[0].state}</h1>
              <h1>{titleArray[0].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{titleArray[0].adr}</h1>
-            
+             <h1 className="date-t">{new Date(titleArray[0].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
          </div>
@@ -185,9 +190,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{titleArray[1].state}</h1>
              <h1>{titleArray[1].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{titleArray[1].adr}</h1>
-            
+             <h1 className="date-t">{new Date(titleArray[1].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
          </div>
@@ -219,9 +224,10 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{titleArray[0].state}</h1>
              <h1>{titleArray[0].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{titleArray[0].adr}</h1>
-         
+             
+             <h1 className="date-t">{new Date(titleArray[0].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
            </div>
@@ -260,9 +266,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{title[0].state}</h1>
              <h1>{title[0].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{title[0].adr}</h1>
-             
+             <h1 className="date-t">{new Date(title[0].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
        </div>
@@ -290,9 +296,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{title[1].state}</h1>
              <h1>{title[1].zip}</h1>
            </div>
-           <div className="ci">   
+           <div className="ci date">
              <h1>{title[1].adr}</h1>
-            
+             <h1 className="date-t">{new Date(title[1].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
        </div>
@@ -320,9 +326,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{title[2].state}</h1>
              <h1>{title[2].zip}</h1>
            </div>
-           <div className="ci">
-             <h1>{title[2].adr}</h1>
-            
+           <div className="ci date">
+             <h1>{title[1].adr}</h1>
+             <h1 className="date-t">{new Date(title[1].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
        </div>
@@ -357,9 +363,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{title[0].state}</h1>
              <h1>{title[0].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{title[0].adr}</h1>
-            
+             <h1 className="date-t">{new Date(title[0].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
        </div>
@@ -388,9 +394,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{title[1].state}</h1>
              <h1>{title[1].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{title[1].adr}</h1>
-          
+             <h1 className="date-t">{new Date(title[1].createdAt).toLocaleDateString()}</h1>
            </div>
        </div>
      </div>
@@ -422,9 +428,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{title[0].state}</h1>
              <h1>{title[0].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{title[0].adr}</h1>
-             
+             <h1 className="date-t">{new Date(title[0].createdAt).toLocaleDateString()}</h1>
            </div>
        </div>
       </div>
@@ -463,9 +469,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{titleBuy[0].state}</h1>
              <h1>{titleBuy[0].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{titleBuy[0].adr}</h1>
-           
+             <h1 className="date-t">{new Date(titleBuy[0].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
        </div>
@@ -493,9 +499,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{titleBuy[1].state}</h1>
              <h1>{titleBuy[1].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{titleBuy[1].adr}</h1>
-           
+             <h1 className="date-t">{new Date(titleBuy[1].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
        </div>
@@ -523,9 +529,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{titleBuy[2].state}</h1>
              <h1>{titleBuy[2].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{titleBuy[2].adr}</h1>
-            
+             <h1 className="date-t">{new Date(titleBuy[2].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
        </div>
@@ -557,9 +563,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{titleBuy[0].state}</h1>
              <h1>{titleBuy[0].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{titleBuy[0].adr}</h1>
-            
+             <h1 className="date-t">{new Date(titleBuy[0].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
        </div>
@@ -587,9 +593,9 @@ const titleBuy = titleArray.filter(buy => {
              <h1>{titleBuy[1].state}</h1>
              <h1>{titleBuy[1].zip}</h1>
            </div>
-           <div className="ci">
+           <div className="ci date">
              <h1>{titleBuy[1].adr}</h1>
-             
+             <h1 className="date-t">{new Date(titleBuy[1].createdAt).toLocaleDateString()}</h1>
            </div>
            </div>
        </div>

@@ -6,13 +6,17 @@ const Login = require('./models/login')
 const auth = require('./mid/auth')
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
+const path = require('path')
 const app = express()
 app.use(express.json())
 
 app.use(cors())
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'img')
+    cb(null, 'img' )
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname))
   }
 })
 
@@ -22,7 +26,7 @@ mongoose.connect("mongodb+srv://skylar:12@cluster0.0kkpf.mongodb.net/lists2?retr
 { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}
 )
 
-
+// upload.single('img'),
 app.post('/inst',  async (req, res) => {
     try{
       const buy = req.body.buy;
@@ -33,7 +37,7 @@ app.post('/inst',  async (req, res) => {
       const bed = req.body.bed;
       const sq = req.body.sq;
       const price = req.body.price;
-
+   //   const img = req.file.filename;
       const adr = req.body.adr;
       const city = req.body.city;
       const state = req.body.state;
@@ -45,10 +49,11 @@ app.post('/inst',  async (req, res) => {
       const lot = req.body.lot;
       const sqm = req.body.sqm;
       const year = req.body.year;
+     // console.log('img', req.file)
       const form = new Form({
         buy, prop, des, full, half, bed, sq, price,
         adr, city, state, zip, loft, base, park, garS, 
-        lot, sqm, year
+        lot, sqm, year, //img
    })
   
    const newList = form.save()
@@ -69,7 +74,7 @@ app.post('/inst',  async (req, res) => {
         res.send(err)
       }
       res.send(result)
-    })
+    }).sort({createdAt: 'desc'})
   })
   app.get('/inst/read/:id', async (req, res) => {
     const id = req.params.id
@@ -95,6 +100,7 @@ app.post('/inst',  async (req, res) => {
      Form.findById(id)
      .then(blog => {
       blog.buy = req.body.buy;
+     
       blog.prop = req.body.prop;
       blog.des = req.body.des;
       blog.full = req.body.full;

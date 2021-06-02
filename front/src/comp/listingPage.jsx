@@ -4,14 +4,18 @@ import { useState } from 'react';
 function ListingPage(props) {
   
 
+ 
+
 
   const [buy, setBuy] = useState([])
   const [prop, setProp] = useState([])
   const [des, setDes] = useState('')
+  const [createdAt, setCreatedAt] = useState('')
   const [adr, setAdr] = useState('')
   const [city, setCity] = useState('')
   const [state, setState] = useState('')
   const [zip, setZip] = useState('')
+  const [img, setImg] = useState('')
   const [base, setBase] = useState([])
   const [loft, setLoft] = useState([])
   const [park, setPark] = useState([])
@@ -25,15 +29,44 @@ function ListingPage(props) {
   const [bed, setBed] = useState(0)
   const [sq, setSq] = useState(0)
   const [message, setMessage] = useState('')
+  const onChangeImg = (e) => {
+    setImg(e.target.file)
+    
+  }
   const add = (e) => {
+  /*  const formData = new FormData();
+    formData.append("buy", buy)
+    formData.append("prop", prop)
+    formData.append("des", des)
+    formData.append("full", full)
+    formData.append("half", half)
+    formData.append("buy", buy)
+
+    formData.append("bed", bed)
+    formData.append("sq", sq)
+    formData.append("price", price)
+    formData.append("adr", adr)
+    formData.append("city", city)
+    formData.append("state", state)
+    formData.append("zip", zip)
+    formData.append("base", base)
+    formData.append("loft", loft)
+    formData.append("park", park)
+    formData.append("garS", garS)
+    formData.append("lot", lot)
+    formData.append("sqm", sqm)
+    formData.append("year", year)
+    formData.append("createdAt", createdAt)
+    formData.append("img", img) */
     e.preventDefault()
   Axios.post('/',  {
     buy: buy, prop: prop, des: des, full: full,
     half: half, bed: bed, sq: sq, price: price,
     adr: adr, city: city, state: state, zip: zip, base: base, 
-    loft: loft, park: park,  garS: garS, lot: lot, sqm: sqm, year: year
+    loft: loft, park: park,  garS: garS, lot: lot, sqm: sqm, year: year,
+    createdAt: createdAt
 
-  })
+  } )
   .then(res => setMessage(res.data))
 }
 
@@ -49,7 +82,7 @@ function ListingPage(props) {
       </div>
         <div className="form">
          <h1 className="mess-con">{message}</h1>
-        <form>
+        <form  >
           <div className="gen">
             <div className="sect">
             <h1>General info</h1>
@@ -165,6 +198,7 @@ function ListingPage(props) {
             <label>Address*</label>
              <input name="bathrooms" type="text" placeholder="Address" className="text-in" onChange={(e) => setAdr(e.target.value)} required/>
             </div>
+           
             </div>
             </div>
             </div>

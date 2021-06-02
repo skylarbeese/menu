@@ -11,7 +11,7 @@ function More(props) {
   const [mouse4, setMouse4] = useState(false)
   const [menu, setMenu] = useState(false)
 
-
+  const [createdAt, setCreatedAt] = useState('')
   const [buy, setBuy] = useState('')
   const [prop, setProp] = useState('')
   const [park, setPark] = useState('')
@@ -35,6 +35,7 @@ function More(props) {
         axios.get(`/read/${props.match.params.id}`)
          .then(res => [setBuy(res.data.buy), setProp(res.data.prop),
           setFull(res.data.full),
+          setCreatedAt(res.data.createdAt),
           setHalf(res.data.half),
           setBed(res.data.bed),
           setSq(res.data.sq),
@@ -113,6 +114,7 @@ const mou4 = () => {
            <div className="bath-bed">
                <div className="bath">
                  <h1>{full + half}</h1>
+                 
                  <h1 className="bath-text">bathrooms</h1>
                </div>
                <div className="bed">

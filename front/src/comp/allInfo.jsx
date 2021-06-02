@@ -17,7 +17,7 @@ return (<>
        <div className="text-info">
        <div className="tit-in">
          <h1>{ti.prop} for {ti.buy}</h1>
-         <h1 className="li-price">{ti.price}</h1>
+         <h1 className="li-price">$ {ti.price}</h1>
        </div>
        </div>
          <div className="underline"></div>

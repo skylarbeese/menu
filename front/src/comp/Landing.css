@@ -1,7 +1,9 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
+
 .text-link {
     padding: 2rem;
     width: 95%;
@@ -12,7 +14,12 @@
 }
 .landing-con {
  width: 100vw;
-
+ 
+}
+.underlinee {
+    width: 20%;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
 }
 .info-con-c  {
     box-shadow: rgb(192, 192, 192) 1px 2px 7px;
@@ -44,10 +51,10 @@
 .con-a a {
     text-decoration: none;
     color: black;
-   
+    background-color: white;
 }
 .landing-text{
-    position: absolute;
+    position: relative;
     width: 90%;
     height: 100%;
     justify-content: center;
@@ -55,11 +62,19 @@
     display: flex;
     flex-direction: column;
     color: rgb(255, 255, 255);
-   
+    z-index: 1;
 }
 .landing-text h1 {
     font-size: 3rem;
+    margin-bottom: 1rem;
 }
+.landing-text p {
+    margin-top: 1rem;
+    width: 70%;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+}
+
 .info-cont {
     width: 100vw;
     justify-content: center;
@@ -148,6 +163,16 @@
     display: flex;
     flex-direction: column;
 }
+.date {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+.date-t {
+    opacity: .5;
+    font-size: .2rem;
+}
 @media screen and (min-width: 0px) and (max-width:950px) {
     .con-a{
         
@@ -187,4 +212,12 @@
         align-items: center;
         display: flex;
      }
+     .text-link {
+        padding: 1.4rem;
+        width: 85%;
+    }
+    .text-link a{
+        text-decoration: none;
+        color: #000;
+    }
 } 
