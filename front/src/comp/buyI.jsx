@@ -1,7 +1,19 @@
 import './Footer.css';
 import {Link} from "react-router-dom"
+import React from 'react'
+import {useWindowScroll} from 'react-use'
 function BuyI({titleArray, search, data, searchTerm}) {
-
+  const[show, setShow] = React.useState(false)
+  const {y: pageYOffset } = useWindowScroll()
+  console.log(pageYOffset)
+  console.log(show)
+React.useEffect(() => {
+  if(pageYOffset > 0) {
+    setShow(true)
+  } else {
+    setShow(false)
+  }
+}, [pageYOffset])
   return (
     <>
    
@@ -9,7 +21,7 @@ function BuyI({titleArray, search, data, searchTerm}) {
 
 return (<>
 <Link to={{pathname: `/comp/more/${ti._id}`}}>
-  <div className="info-con">
+  <div className={`info-con ${show ? 'header-show-text-f' : 'header-hide-text-f'}`}>
 
   <div className="info-box-con">
      <div className="image-box"></div>

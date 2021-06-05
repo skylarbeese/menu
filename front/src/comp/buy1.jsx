@@ -1,6 +1,7 @@
 import './Buy.css';
 import React, {useEffect, useState} from 'react'
 import BuyI from './buyI'
+import Arr from './../arr'
 function Buy1(props) {
     const inputEl = React.useRef()
     const [data, setData] = useState("")
@@ -12,6 +13,7 @@ function Buy1(props) {
     <>
     <div className="All-con">
     <div className="landing-img">
+    <div className="img" style= {{backgroundImage: `url(${Arr[0]})`}}></div > 
       <div className="grad-img"></div>
       <div className="landing-text"> 
       <h1>Search for a location for buy</h1> 

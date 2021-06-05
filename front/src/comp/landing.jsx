@@ -1,8 +1,45 @@
 import './Landing.css';
 import './AllListings.css';
 import {Link} from "react-router-dom"
+import Arr from './../arr'
+import React from 'react'
+import {useWindowScroll} from 'react-use'
 function Landing({titleArray}) {
- 
+  const[show, setShow] = React.useState(false)
+  const[showT, setShowT] = React.useState(false)
+  const[show1, setShow1] = React.useState(false)
+  const[show2, setShow2] = React.useState(false)
+  const {y: pageYOffset } = useWindowScroll()
+  //  console.log(pageYOffset)
+  //  console.log(show)
+  React.useEffect(() => {
+    if(pageYOffset > 0) {
+      setShowT(true)
+    } else {
+      setShowT(false)
+    }
+     /*----------------------------------*/
+    if(pageYOffset > 200) {
+       setShow(true)
+     } else {
+       setShow(false)
+     }
+     /*---------------------------------*/
+     if(pageYOffset > 300) {
+      setShow1(true)
+    } else {
+      setShow1(false)
+    }
+    /*-------------------------------------*/
+    if(pageYOffset > 890) {
+      setShow2(true)
+    } else {
+      setShow2(false)
+    }
+    
+    
+ }, [pageYOffset])
+
  const title = titleArray.filter(rent => {
   return rent.buy === 'Rent'
 })
@@ -12,10 +49,13 @@ const titleBuy = titleArray.filter(buy => {
   return (
    <div className="landing-con">
       <div className="landing-img">
+     
+        
+      <div className="img" style= {{backgroundImage: `url(${Arr[0]})`}}></div> 
         <div className="grad-img"></div>
-        <div className="landing-text"> <h1>Se</h1> 
-        <div className="underlinee"></div>
-        <p> Bacon ipsum dolor amet ham hock brisket ham tri-tip cupim. 
+         <div className="landing-text"> <h1 className={showT ? 'header-hide-text' : 'header-show-text'}>Se</h1> 
+          <div className={`underlinee ${showT ? 'header-hide-text-u' : 'header-show-text-u'}`}></div>
+           <p className={showT ? 'header-hide-text' : 'header-show-text'}> Bacon ipsum dolor amet ham hock brisket ham tri-tip cupim. 
            Tri-tip strip steak pork belly prosciutto, filet mignon tongue ham 
            hock beef ribs ball tip. </p>
         </div>
@@ -42,7 +82,7 @@ const titleBuy = titleArray.filter(buy => {
     <div className="info">
     <div className="text-link"><Link to="./comp/allListings"><h1>see all listings</h1></Link></div>
     {/*------------------------------------------------------------------------------------------------*/}
-    {titleArray.length > 2 ? <div className="con-a">
+    {titleArray.length > 2 ? <div className={`con-a ${show ? 'header-show' : 'header-hide'}`}>
   
     <Link to={{pathname: `/comp/more/${titleArray[0]._id}`}}><div className="info-con-c">
        <div className="info-box-con">
@@ -137,7 +177,7 @@ const titleBuy = titleArray.filter(buy => {
        </Link>
      </div> : 
      titleArray.length === 2 ?
-     <div className="con-a">
+     <div className={`con-a ${show ? 'header-show' : 'header-hide'}`}>
        <Link to={{pathname: `/comp/more/${titleArray[0]._id}`}}>
      <div className="info-con-c">
        <div className="info-box-con">
@@ -201,7 +241,7 @@ const titleBuy = titleArray.filter(buy => {
        </div>: 
        
        titleArray.length === 1 ?
-       <div className="con-a">
+       <div className={`con-a ${show ? 'header-show' : 'header-hide'}`}>
          <Link to={{pathname: `/comp/more/${titleArray[0]._id}`}}>
        <div className="info-con-c">
          <div className="info-box-con">
@@ -243,7 +283,7 @@ const titleBuy = titleArray.filter(buy => {
     {/*----------------------------------------------------------------------------------------------------*/}
         <div className="text-link"><Link to="./comp/rent"><h1>see all rent listings</h1></Link></div>
       {/*----------------------------------------------------------------------------------------------------*/}
-        {title.length > 2 ? <div className="con-a">
+        {title.length > 2 ? <div className={`con-a ${show1 ? 'header-show' : 'header-hide'}`}>
   <Link to={{pathname: `/comp/more/${title[0]._id}`}}>
   <div className="info-con-c">
      <div className="info-box-con">
@@ -340,7 +380,7 @@ const titleBuy = titleArray.filter(buy => {
    </div> : 
    title.length === 2 ?
 
-   <div className="con-a">
+   <div className={`con-a ${show1 ? 'header-show' : 'header-hide'}`}>
   <Link to={{pathname: `/comp/more/${title[0]._id}`}}>
   <div className="info-con-c">
      <div className="info-box-con">
@@ -405,7 +445,7 @@ const titleBuy = titleArray.filter(buy => {
      </div>:
 
    title.length === 1 ?
-   <div className="con-a">
+   <div className={`con-a ${show1 ? 'header-show' : 'header-hide'}`}>
      <Link to={{pathname: `/comp/more/${title[0]._id}`}}>
    <div className="info-con-c">
      <div className="info-box-con">
@@ -445,7 +485,7 @@ const titleBuy = titleArray.filter(buy => {
   {/*----------------------------------------------------------------------------------------------------*/}
       <div className="text-link"><Link to="./comp/buy"><h1>see all buying listings</h1></Link></div>
 
-        {titleBuy.length > 2 ? <div className="con-a">
+        {titleBuy.length > 2 ? <div className={`con-a ${show2 ? 'header-show' : 'header-hide'}`}>
     {/*----------------------------------------------------------------------------------------------------*/}
     <Link to={{pathname: `/comp/more/${titleBuy[0]._id}`}}>
   <div className="info-con-c">
@@ -539,7 +579,7 @@ const titleBuy = titleArray.filter(buy => {
      </Link>
    </div> : 
    titleBuy.length === 2 ?
-   <div className="con-a">
+   <div className={`con-a ${show2 ? 'header-show' : 'header-hide'}`}>
      <Link to={{pathname: `/comp/more/${titleBuy[0]._id}`}}>
    <div className="info-con-c">
      <div className="info-box-con">
@@ -605,7 +645,7 @@ const titleBuy = titleArray.filter(buy => {
 
   </div> :
    titleBuy.length === 1 ?
-   <div className="con-a">
+   <div className={`con-a ${show2 ? 'header-show' : 'header-hide'}`}>
   <Link to={{pathname: `/comp/more/${titleBuy[0]._id}`}}>
    <div className="info-con-c">
      <div className="info-box-con">

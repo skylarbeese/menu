@@ -1,7 +1,7 @@
 import AllInfo from './allInfo';
 import React, {useEffect, useState} from 'react'
 import './AllListings.css';
-
+import Arr from './../arr'
 function AllListings1(props) {
   const inputEl = React.useRef()
   const [data, setData] = useState("")
@@ -15,6 +15,7 @@ function AllListings1(props) {
       <div className="All-con">
       <div className="landing-img">
         <div className="grad-img"></div>
+        <div className="img" style= {{backgroundImage: `url(${Arr[0]})`}}></div>
         <div className="landing-text"> 
         <h1>Search for a location</h1> 
         <form action="" className="form-sea">

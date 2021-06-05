@@ -3,6 +3,7 @@ import Nav from './nav'
 import {Link} from "react-router-dom"
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
+import Arr from './../arr'
 function More(props) {
 
   const [mouse1, setMouse1] = useState(false)
@@ -79,9 +80,10 @@ const mou4 = () => {
    <Nav />
    <div className="more-con">
      <div className="more">
-      <div className="img-con">
-        <div className="img-box"></div>
-      </div>
+      <div className="landing-img-t">
+   <div className="img" style= {{backgroundImage: `url(${Arr[0]})`}}></div > 
+      <div className="grad-img"></div> 
+     
  
       <div className="info-con-more">
         <div className="info-more">
@@ -129,6 +131,7 @@ const mou4 = () => {
          </div>
        </div>
        </div>
+ </div>
  </div>
        <div className="int">
   {/*-------------------------------------------------------------------------------------*/}       
@@ -287,7 +290,7 @@ const mou4 = () => {
               </div>
               <input type="text" />
               <div className="btn-con">
-                <button>send</button>
+                <button>SEND</button>
               </div>
             </form>
           </div>
@@ -297,8 +300,8 @@ const mou4 = () => {
        
     <div className="btn">
         <div className="btn-con">
-              <Link to="/"><button onClick={Del}>delete</button></Link>
-              <Link to={`/comp/edit/${props.match.params.id}`}><button>edit</button></Link>
+              <Link to="/"><button onClick={Del}>DELETE</button></Link>
+              <Link to={`/comp/edit/${props.match.params.id}`}><button>EDIT</button></Link>
             </div> 
         </div>
 
