@@ -6,6 +6,10 @@
     flex-direction: column;
 
 }
+.con-more {
+    padding-bottom: 2rem;
+    box-shadow: rgb(192, 192, 192) 1px 2px 7px;
+}
 .more {
     width: 100%;
     justify-content: center;
@@ -67,6 +71,9 @@ h1{
   
     color: rgb(255, 255, 255);
     z-index: 1;
+   
+    align-items: center;
+    display: flex;
 }
 .info-more{
     width: 100%;
@@ -305,9 +312,18 @@ h1{
   
     display: flex;
     width: 80%;
+    border-bottom: 1px black;
+}
+.ba {
+   font-style: italic;
 }
 .btn-con a{
   margin: .2rem;
+}
+.back-btn {
+    display: flex;
+    
+    margin-top: 1rem;
 }
 button {
     padding-bottom: .4rem;
@@ -349,6 +365,15 @@ button {
     font-size: 1rem;
     font-weight: lighter;
     padding-left: .4rem;
+}
+.mor {
+    width: 100%;
+    justify-content: center;
+        align-items: center;
+        display: flex;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+       
 }
 @media screen and (min-width: 0px) and (max-width:1000px) {
     .img-con {
@@ -426,7 +451,7 @@ button {
 }
 @media screen and (min-width: 0px) and (max-width:720px) {
     .info-more{
-        width: 100%;
+        width: 80%;
         justify-content: space-between;
         align-items: center;
         display: flex;
@@ -524,13 +549,14 @@ button {
 }
 
 @media screen and (min-width: 0px) and (max-width:550px) {
+    
     .info-more{
-        width: 100%;
+        width: 80%;
         justify-content: space-between;
         align-items: center;
         display: flex;
         
-        padding-top: 2rem;
+        padding-top: 5rem;
         padding-bottom: 1rem;
     }
     .c-form {
